@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Favorites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <h1>❤️ My Favorite Anime</h1>
+  </nav>
+
+  <div class="anime-container" id="favList"></div>
+
+  <script>
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const container = document.getElementById("favList");
+
+    if (!favorites.length) {
+      container.innerHTML = "<h2 style='padding:20px'>No favorites yet</h2>";
+    } else {
+      container.innerHTML = favorites.map(anime => `
+        <div class="card">
+          <img src="${anime.image}">
+          <h3>${anime.name}</h3>
+        </div>
+      `).join("");
+    }
+  </script>
+
+</body>
+</html>

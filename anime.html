@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anime Details</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" href="images/favicon.png?v=999">
+</head>
+
+<body>
+
+  <!-- ✅ NAVBAR (MUST BE OUTSIDE EVERYTHING) -->
+  <nav>
+    <h1 onclick="window.location.href='index.html'" style="cursor:pointer;">
+      🐔 Karma's_Anime-HUB
+    </h1>
+
+    <a href="favorites.html" style="color:white; margin-left:20px;">
+      My Favorites ❤️
+    </a>
+  </nav>
+
+  <!-- ✅ DETAILS -->
+  <div class="anime-page">
+
+  <div class="anime-left">
+    <img id="animeImage" class="anime-img">
+  </div>
+
+  <div class="anime-right">
+    <h1 id="animeTitle" class="anime-title"></h1>
+
+    <p id="animeDesc" class="anime-desc"></p>
+
+    <div id="trailerContainer" class="trailer-box"></div>
+
+    <div class="anime-buttons">
+      <a id="watchBtn" target="_blank" class="watch-btn">▶ Watch Now</a>
+    </div>
+  </div>
+
+</div>
+   <script src="script.js"></script>
+
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const name = localStorage.getItem("selectedAnime");
+  const anime = allAnime.find(a => a.name === name);
+
+  const container = document.getElementById("animeDetails");
+
+  if (!anime) {
+    container.innerHTML = "<h2>No anime selected</h2>";
+    return;
+  }
+
+  document.title = anime.name + " | Karma's Hub";
+
+  container.innerHTML = `
+    <div class="anime-page">
+
+      <div class="anime-left">
+        <img src="${anime.image}" class="anime-img">
+      </div>
+
+      <div class="anime-right">
+        <h1 class="anime-title">${anime.name}</h1>
+
+        <p class="anime-desc">
+          ${anime.desc || "No description available."}
+        </p>
+
+        <!-- TRAILER -->
+        <div class="trailer-box">
+          ${anime.trailer ? `
+            <iframe 
+              src="${
+                anime.trailer
+                  .replace("youtu.be/", "www.youtube.com/embed/")
+                  .replace("watch?v=", "embed/")
+                  .split("&")[0]
+              }"
+              allowfullscreen>
+            </iframe>
+          ` : "<p style='color:gray;'>No trailer available</p>"}
+        </div>
+
+        <!-- WATCH BUTTON -->
+        ${anime.watch ? `
+          <a href="${anime.watch}" target="_blank" class="watch-btn">
+            ▶ Watch Now
+          </a>
+        ` : ""}
+      </div>
+
+    </div>
+  `;
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const name = localStorage.getItem("selectedAnime");
+
+  if (!name) return;
+
+  const anime = allAnime.find(a => a.name === name);
+  if (!anime) return;
+
+  document.title = anime.name + " | Karma's Hub";
+
+  document.getElementById("animeImage").src = anime.image;
+  document.getElementById("animeTitle").textContent = anime.name;
+  document.getElementById("animeDesc").textContent =
+    anime.desc || "No description available";
+
+  const watchBtn = document.getElementById("watchBtn");
+
+  if (anime.watch) {
+    watchBtn.href = anime.watch;
+    watchBtn.style.display = "inline-block";
+  } else {
+    watchBtn.style.display = "none";
+  }
+
+});
+</script>
+
+**whatever you see on the watch page is no where linked to karma's hub or will it be blamed on karma's hub**

@@ -1,0 +1,293 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111827;
+  padding: 14px 20px;
+  position: relative;
+}
+
+/* CENTER TITLE */
+nav h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* GENRE + FAVORITES STACK */
+#genreFilter {
+  margin-left: auto;
+}
+
+/* FAVORITES LINK (UNDER GENRE VISUALLY) */
+nav a {
+  position: absolute;
+  right: 20px;
+  top: 45px;   /* pushes it under genre */
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.85;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ================= SEARCH ================= */
+#searchBar {
+  width: 90%;
+  margin: 15px auto;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* ================= SECTIONS ================= */
+.anime-section {
+  padding: 10px 15px;
+}
+
+.anime-section h2 {
+  margin-left: 10px;
+}
+
+/* ================= GRID (WIDER CARDS) ================= */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* ================= CARD ================= */
+.card {
+  position: relative;
+  height: 420px; /* taller + wider feel */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+/* IMAGE FILLS CARD */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= TITLE (BORDERED STYLE) ================= */
+.card h3 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  margin: 0;
+  padding: 6px 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #3b82f6;
+  border-radius: 6px;
+
+  color: white;
+}
+
+/* ================= BUTTON AREA ================= */
+.card-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* FAVORITE + TRAILER BUTTONS */
+.card-buttons button,
+.card-buttons a {
+  width: 100%;
+  padding: 8px;
+  font-size: 13px;
+
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #2b3345;
+  color: white;
+
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.card-buttons button:hover,
+.card-buttons a:hover {
+  border-color: #3b82f6;
+  background: rgba(59,130,246,0.2);
+}
+
+/* ================= MODAL (KEEP CLEAN) ================= */
+/* ================= MODAL BACKDROP ================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+}
+
+/* ================= MODAL BOX ================= */
+.modal-content {
+  background: #111827;
+  width: 80%;
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  color: white;
+}
+
+/* CLOSE BUTTON */
+#closeModal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* VIDEO RESPONSIVE */
+.video-wrapper iframe {
+  border-radius: 10px;
+}
+
+/* TITLE */
+#modalTitle {
+  margin-top: 0;
+}
+
+/* DESCRIPTION */
+#modalDesc {
+  color: #bbb;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ===== ANIME PAGE ===== */
+
+.anime-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  color: white;
+}
+
+/* LEFT */
+.anime-left {
+  flex: 1;
+}
+
+.anime-img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+/* RIGHT */
+.anime-right {
+  flex: 2;
+}
+
+/* TITLE */
+.anime-title {
+  font-size: 34px;
+  border-bottom: 2px solid red;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* DESCRIPTION */
+.anime-desc {
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* BUTTON */
+.watch-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.watch-btn:hover {
+  background: red;
+  transform: scale(1.05);
+}
+
+.trailer-box iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 15px;
+}
+
+.anime-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  color: white;
+}
+
+.anime-img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.watch-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
