@@ -273,8 +273,8 @@ const recent = [
   {
     name: "Witch Hat Atelier",
     image: "images/witchat.jfif",
-    desc: "",
-    watch: ""
+    desc: "Witch hat Atelier follows a girl who dreams of becoming a witch. After discovering the hidden truth behind magic and accidentally turning her mom into stone, she becomes an apprentice witch and sets out to master magic while uncovering dangerous secrets",
+    watch: "https://animepahe.pw/anime/4dd7ef34-ef7f-9bef-7397-7bf3da186d81"
   },
   {
   name: "JoJo's Bizarre Adventure Steel Ball Run",
