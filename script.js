@@ -34,7 +34,7 @@ const animeData = [
   {
     name: "Black Clover",
     image: "images/blackclover.jfif",
-    desc: "",
+    desc: "Black clover is a story about a boy born without magical pwers in a world where everything is made of magic, Asta has to overcomwe adversity in order to achieve his dream of becoming wizard king",
     watch: "https://animepahe.pw/anime/38183e8f-6e96-6cc3-a84d-0d35327f7b24"
   },
   
