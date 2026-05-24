@@ -34,7 +34,8 @@ const animeData = [
   {
     name: "Black Clover",
     image: "images/blackclover.jfif",
-    desc: ""
+    desc: "",
+    watch: "https://animepahe.pw/anime/38183e8f-6e96-6cc3-a84d-0d35327f7b24"
   },
   
   
