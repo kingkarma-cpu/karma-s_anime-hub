@@ -719,7 +719,7 @@ const mystery = [
   },
     {
     name: "Monster",
-    image: "images/monster.jpg",
+    image: "images/monster2.jpg",
     desc: "A brilliant surgeon saves a boy who later becomes a dangerous serial killer, forcing him into a moral chase across Europe."
   },
   {
@@ -769,7 +769,7 @@ const mystery = [
   },
   {
     name: "Hyouka",
-    image: "images/hyouka.jpg",
+    image: "images/hyouka.jfif",
     desc: "A boy joins a school club and solves small mysteries that slowly reveal deeper emotional truths."
   },
   {
