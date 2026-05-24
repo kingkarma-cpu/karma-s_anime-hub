@@ -473,7 +473,7 @@ const romance = [
   },
   {
     name: "Rosario + Vampire",
-    image: "images/rosario.jfif",
+    image: "images/rosario.jpg",
     desc: "",
     watch: ""
   },
