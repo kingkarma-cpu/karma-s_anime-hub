@@ -24,12 +24,14 @@ const animeData = [
   {
     name: "Demon Slayer",
     image: "images/demonslayer.jpg",
-    desc: "The story follows Tanjiro Kamado, a kind-hearted and hardworking boy who lives peacefully with his family in the mountains. His life is shattered when he returns home one day to find his entire family slaughtered by demons—leaving only his younger sister Nezuko Kamado alive… but transformed into a demon herself and he is dragged into the war between humans and demons for the sake of his sister."
+    desc: "The story follows Tanjiro Kamado, a kind-hearted and hardworking boy who lives peacefully with his family in the mountains. His life is shattered when he returns home one day to find his entire family slaughtered by demons—leaving only his younger sister Nezuko Kamado alive… but transformed into a demon herself and he is dragged into the war between humans and demons for the sake of his sister.",
+    watch: "https://animepahe.pw/anime/0d642a53-3610-ed30-1b9d-ca5ee8a92a0f"
   },
   {
     name: "Sakamoto Days",
     image: "images/sakamoto.jfif",
-    desc: ""
+    desc: "",
+    watch: "https://animepahe.pw/anime/6fe3d38c-8a4f-46a4-884a-9df0bf90ef2a"
   },
   {
     name: "Black Clover",
@@ -45,7 +47,8 @@ const action = [
   {
     name: "Attack on Titan",
     image: "images/aot.jpg",
-    desc: "Humans fight giant titans while uncovering dark secrets about their world."
+    desc: "Humans fight giant titans while uncovering dark secrets about their world.",
+    watch: "https://animepahe.pw/anime/0c874b49-74db-8561-d507-6e300e0ef4e4"
   },
   {
     name: "Naruto",
@@ -56,17 +59,20 @@ const action = [
   {
     name: "Jujutsu Kaisen",
     image: "images/jjk.jpg",
-    desc: "A boy enters a dangerous world of curses and sorcerers."
+    desc: "A boy enters a dangerous world of curses and sorcerers.",
+    watch: "https://animepahe.pw/anime/7c3c31da-3672-eacd-eadf-5354aa234ae6"
   },
     {
     name: "Chainsaw Man",
     image: "images/csman.jfif",
-    desc: "A boy bound to a devil gains chainsaw powers and enters a violent world of devil hunters, survival, and twisted desires."
+    desc: "A boy bound to a devil gains chainsaw powers and enters a violent world of devil hunters, survival, and twisted desires.",
+    watch: "https://animepahe.pw/anime/2ace5b79-4d59-08a8-5964-33589bbd1d45"
   },
   {
     name: "Solo Leveling",
     image: "images/solo.jfif",
-    desc: "A weak hunter becomes humanity’s strongest after gaining a mysterious system that allows him to level up endlessly."
+    desc: "A weak hunter becomes humanity’s strongest after gaining a mysterious system that allows him to level up endlessly.",
+    watch: "https://animepahe.pw/anime/a57b14d1-d0bd-e092-0276-d4d20f7ea28d"
   },
   {
   name: "Fire Force",
