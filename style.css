@@ -368,23 +368,38 @@ nav a:hover {
 /* ================= FAVORITES PAGE ONLY ================= */
 
 #favList {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 15px;
+  padding: 15px;
 }
 
-/* Background image layer */
-#favList::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+#favList .card {
+  height: 220px;
+  border-radius: 10px;
+}
+
+#favList .card img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
 
-  background: url("images/anya.png") no-repeat center center;
-  background-size: cover;
+#favList .card h3 {
+  font-size: 12px;
+  padding: 4px 8px;
+}
 
-  opacity: 0.08; /* adjust strength */
-  z-index: -1;
+@media (max-width: 768px) {
+  #favList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #favList .card {
+    height: 180px;
+  }
+}
+
+#favList .card:hover {
+  transform: scale(1.05);
 }
