@@ -130,4 +130,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const favBtn = document.querySelector(".fav-btn");
+
+  favBtn.addEventListener("click", () => {
+
+    const anime = {
+      name: document.getElementById("animeTitle").innerText,
+      image: document.getElementById("animeImage").src
+    };
+
+    let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+    let exists = favs.some(a => a.name === anime.name);
+    if (exists) {
+      alert("Already in favorites ❤️");
+      return;
+    }
+
+    favs.push(anime);
+
+    localStorage.setItem("favs", JSON.stringify(favs));
+
+    alert("Added to favorites ❤️");
+  });
+
+});
+</script>
+
 **whatever you see on the watch page is no where linked to karma's hub or will it be blamed on karma's hub**
