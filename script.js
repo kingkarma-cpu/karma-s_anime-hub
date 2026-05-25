@@ -1716,3 +1716,22 @@ document.querySelector(".fav-btn").addEventListener("click", function () {
     this.innerText = "❤️ Add to Favorites";
   }
 });
+
+document.querySelector(".fav-btn").addEventListener("click", function () {
+  let animeName = document.querySelector(".anime-title").innerText;
+  let animeImg = document.querySelector(".anime-img").src;
+
+  let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+  let exists = favs.find(a => a.name === animeName);
+
+  if (!exists) {
+    favs.push({
+      name: animeName,
+      image: animeImg
+    });
+
+    localStorage.setItem("favs", JSON.stringify(favs));
+    alert("Added to favorites ❤️");
+  }
+});
