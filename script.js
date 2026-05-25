@@ -1705,3 +1705,14 @@ function loadFavoritesPage() {
     ? favAnime.map(createCard).join("")
     : "<h2>No favorites yet ❤️</h2>";
 }
+
+
+document.querySelector(".fav-btn").addEventListener("click", function () {
+  this.classList.toggle("active");
+
+  if (this.classList.contains("active")) {
+    this.innerText = "❤️ Added";
+  } else {
+    this.innerText = "❤️ Add to Favorites";
+  }
+});

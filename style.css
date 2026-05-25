@@ -340,3 +340,27 @@ nav a:hover {
     margin: 5px 0;
   }
 }
+
+.fav-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid #2b3345;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.fav-btn:hover {
+  border-color: red;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.fav-btn:active {
+  transform: scale(0.97);
+  background: rgba(255, 0, 0, 0.3);
+  border-color: red;
+}
