@@ -365,3 +365,26 @@ nav a:hover {
   border-color: red;
 }
 
+/* ================= FAVORITES PAGE ONLY ================= */
+
+#favList {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Background image layer */
+#favList::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: url("images/anya.png") no-repeat center center;
+  background-size: cover;
+
+  opacity: 0.08; /* adjust strength */
+  z-index: -1;
+}
