@@ -1735,3 +1735,22 @@ document.querySelector(".fav-btn").addEventListener("click", function () {
     alert("Added to favorites ❤️");
   }
 });
+
+let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+let container = document.getElementById("favContainer");
+
+container.innerHTML = "";
+
+if (favs.length === 0) {
+  container.innerHTML = "<p>No favorites yet</p>";
+} else {
+  favs.forEach(anime => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${anime.image}">
+        <h3>${anime.name}</h3>
+      </div>
+    `;
+  });
+}
