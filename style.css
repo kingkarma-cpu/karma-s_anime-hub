@@ -31,7 +31,10 @@ nav h1 {
 
 /* GENRE + FAVORITES STACK */
 #genreFilter {
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 /* FAVORITES LINK (UNDER GENRE VISUALLY) */
@@ -325,3 +328,15 @@ nav a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  #genreFilter {
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+  }
+}
