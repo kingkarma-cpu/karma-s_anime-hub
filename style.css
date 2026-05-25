@@ -44,7 +44,7 @@ nav a {
   top: 45px;   /* pushes it under genre */
   font-size: 13px;
   text-decoration: none;
-  color: white;
+  color: rgb(255, 0, 0);
   opacity: 0.85;
 }
 
@@ -346,7 +346,7 @@ nav a:hover {
   margin-top: 15px;
   padding: 10px 20px;
   background: #111827;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 8px;
   border: 1px solid #2b3345;
   cursor: pointer;
