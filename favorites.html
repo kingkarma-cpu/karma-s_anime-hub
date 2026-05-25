@@ -30,5 +30,18 @@
     }
   </script>
 
+let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+let container = document.getElementById("favContainer");
+
+favs.forEach(anime => {
+  container.innerHTML += `
+    <div class="card">
+      <img src="${anime.image}">
+      <h3>${anime.name}</h3>
+    </div>
+  `;
+});
+
 </body>
 </html>
