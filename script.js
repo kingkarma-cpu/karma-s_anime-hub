@@ -12,7 +12,7 @@ const animeData = [
     name: "One Piece",
     image: "images/onepiece.jpg",
     desc: "A young pirate, Monkey D. Luffy, sets out on a legendary journey to find the ultimate treasure—the One Piece—and become the King of the Pirates. Along the way, he builds a powerful crew and takes on dangerous enemies across the seas ",
-    watch: "https://animepahe.pw/anime/617955fb-74aa-d72e-427e-fa393549ab45",
+    watch: "https://animepahe.pw/anime/15a36fc8-73b9-8c2e-ee5f-fb1bcd4fcdc6",
     trailer: "https://www.youtube.com/embed/YnczpEoeaDM"
   },
   {
@@ -77,82 +77,98 @@ const action = [
   {
   name: "Fire Force",
   image: "images/fireforc.jfif",
-  desc: "Special fire soldiers called Fire Force fight spontaneous human combustion cases while uncovering a dark truth behind the phenomenon."
+  desc: "Special fire soldiers called Fire Force fight spontaneous human combustion cases while uncovering a dark truth behind the phenomenon.",
+  watch: "https://animepahe.pw/anime/02b6081d-c0f5-d2f4-3627-426a908558be"
   },
   {
     name: "Vinland Saga",
     image: "images/vinland.jfif",
-    desc: "A Viking warrior’s journey from revenge to redemption in a brutal world of war and survival."
+    desc: "A Viking warrior’s journey from revenge to redemption in a brutal world of war and survival.",
+    watch: "https://animepahe.pw/anime/5cd009f5-096f-f826-1534-355bf85b4f43"
   },
   {
     name: "Hell’s Paradise",
     image: "images/hellsparadise.jfif",
-    desc: "Criminals fight terrifying immortal creatures on a mysterious island while searching for the elixir of life."
+    desc: "Criminals fight terrifying immortal creatures on a mysterious island while searching for the elixir of life.",
+    watch: "https://animepahe.pw/anime/9fed4b96-95c5-c8d9-fb32-433af367c61a"
   },
   {
     name: "Tokyo Revengers",
     image: "images/trevengers.jfif",
-    desc: "A man travels back in time to stop tragedies and rise through violent delinquent gangs."
+    desc: "A man travels back in time to stop tragedies and rise through violent delinquent gangs.",
+    watch: "https://animepahe.pw/anime/a8e93d2c-a648-b7dd-eba0-c8f0e4b06926"
   },
   {
   name: "Code Geass",
   image: "images/codegeass.jfif",
-  desc: "A genius exiled prince gains the power of absolute command and starts a rebellion against a powerful empire while hiding his identity as Zero."
+  desc: "A genius exiled prince gains the power of absolute command and starts a rebellion against a powerful empire while hiding his identity as Zero.",
+  watch: "https://animepahe.pw/anime/4658da79-4017-a8f4-c58d-5f56bfa1722b"
 },
   {
     name: "Bleach: Thousand-Year Blood War",
     image: "images/TYBW.jfif",
-    desc: "Soul Reapers face a deadly war against the Quincy empire threatening all worlds."
+    desc: "Soul Reapers face a deadly war against the Quincy empire threatening all worlds.",
+    wacth: "https://animepahe.pw/anime/258961a4-6de1-2c3e-c1e0-0e623e884e63"
   },
   {
     name: "Mob Psycho 100",
     image: "images/mob.jfif",
-    desc: "A powerful psychic tries to live normally while hiding emotions that could destroy everything."
+    desc: "A powerful psychic tries to live normally while hiding emotions that could destroy everything.",
+    watch:"https://animepahe.pw/anime/422e6f98-ff7d-42ef-66be-62b9950cdb0b"
   },
   {
     name: "Dragon Ball Super",
     image: "images/dsuper.jpg",
-    desc: "Goku and friends face gods, universes, and powerful enemies beyond imagination."
+    desc: "Goku and friends face gods, universes, and powerful enemies beyond imagination.",
+    watch: "https://animepahe.pw/anime/33684e91-3675-5dbf-d479-828df0ba4085"
   },
   {
     name: "Black Clover",
     image: "images/blackclover.jfif",
-    desc: "A magicless boy aims to become the Wizard King through hard work and rival battles."
+    desc: "A magicless boy aims to become the Wizard King through hard work and rival battles.",
+    watch: "https://animepahe.pw/anime/6365dbe0-5a27-4369-b166-07a734cd6299"
   },
   {
     name: "Akudama Drive",
     image: "images/akdrive.jfif",
-    desc: "Criminals known as Akudama are forced into a deadly mission in a futuristic cyberpunk city."
+    desc: "Criminals known as Akudama are forced into a deadly mission in a futuristic cyberpunk city.",
+    watch: "https://animepahe.pw/anime/11398112-e073-1851-093d-47c86ec38a77"
   },
   {
     name: "Parasyte: The Maxim",
     image: "images/parasyte.jfif",
-    desc: "A boy shares his body with a parasite and fights other human-devouring creatures."
+    desc: "A boy shares his body with a parasite and fights other human-devouring creatures.",
+    watch:"https://animepahe.pw/anime/47783687-78ae-d604-a4d8-67d2b2a877f9"
   },
   {
     name: "God of High School",
     image: "images/gohs.jfif",
-    desc: "A martial arts tournament hides supernatural powers and divine battles."
+    desc: "A martial arts tournament hides supernatural powers and divine battles.",
+    watch: "https://animepahe.pw/anime/59dff1ee-2271-3762-1c83-cf4cd2b8402f"
   },
   {
     name: "Akame ga Kill!",
     image: "images/akame.jfif",
-    desc: "An assassin group fights a corrupt empire using deadly unique weapons."
+    desc: "An assassin group fights a corrupt empire using deadly unique weapons.",
+    watch: "https://animepahe.pw/anime/fc14c84b-e618-b9e5-749d-7aa081ad7eec"
   },
   {
     name: "Noragami",
     image: "images/noragami.jfif",
-    desc: "A forgotten god struggles to gain followers while fighting evil spirits."
+    desc: "A forgotten god struggles to gain followers while fighting evil spirits.",
+    watch: "https://animepahe.pw/anime/d0458879-f74d-a36c-d1b0-8282f42710e8"
   },
   {
     name: "Fate/Zero",
     image: "images/fatezero.jfif",
-    desc: "Mages summon legendary heroes to fight in a deadly war for the Holy Grail."
+    desc: "Mages summon legendary heroes to fight in a deadly war for the Holy Grail.",
+    watch: "https://animepahe.pw/anime/7bda66c9-97b1-acae-5e1f-592d045a9b69"
   },
   {
     name: "Chainsaw Man: Reze Arc",
     image: "images/csmreze.jpg",
     desc: "A lesser-known continuation exploring darker missions and unstable devil contracts.",
+    watch: "https://animepahe.pw/anime/03da0c1d-0728-5e9b-14da-7b983246bd20",
     hidden: true
   }
 ];
@@ -168,37 +184,44 @@ const adventure = [
   {
     name: "Made in Abyss",
     image: "images/madeinabyss.jfif",
-    desc: "A journey into a mysterious and dangerous abyss."
+    desc: "A journey into a mysterious and dangerous abyss.",
+    watch: "https://animepahe.pw/anime/7671fd9b-9e2e-3bc6-1898-2d3d793ca056"
   },
     {
     name: "Hunter x Hunter",
     image: "images/hh.jfif",
-    desc: "A boy sets out to become a Hunter while searching for his father, facing deadly trials and powerful enemies along the way."
+    desc: "A boy sets out to become a Hunter while searching for his father, facing deadly trials and powerful enemies along the way.",
+    watch: "https://animepahe.pw/anime/a65f0d63-8932-0e80-dc70-bd11266ec8b4"
   },
   {
     name: "Attack on Titan",
     image: "images/aot.jpg",
-    desc: "Humanity fights giant Titans while uncovering dark truths about their world and its history."
+    desc: "Humanity fights giant Titans while uncovering dark truths about their world and its history.",
+    watch: "https://animepahe.pw/anime/ced4d991-e216-d861-00b7-47412f87c142"
   },
   {
     name: "Fullmetal Alchemist: Brotherhood",
     image: "images/fmab.jfif",
-    desc: "Two brothers use forbidden alchemy in search of the Philosopher’s Stone to restore their bodies after a failed ritual."
+    desc: "Two brothers use forbidden alchemy in search of the Philosopher’s Stone to restore their bodies after a failed ritual.",
+    watch: "https://animepahe.pw/anime/faefb621-9523-02a9-7374-e2ddac737623"
   },
   {
     name: "Vinland Saga",
     image: "images/vinland.jfif",
-    desc: "A Viking warrior travels through war and revenge, eventually questioning the meaning of strength and peace."
+    desc: "A Viking warrior travels through war and revenge, eventually questioning the meaning of strength and peace.",
+    watch: "https://animepahe.pw/anime/5cd009f5-096f-f826-1534-355bf85b4f43"
   },
   {
     name: "Dr. Stone",
     image: "images/drstone.jfif",
-    desc: "A genius boy uses science to rebuild civilization after humanity is mysteriously turned to stone."
+    desc: "A genius boy uses science to rebuild civilization after humanity is mysteriously turned to stone.",
+    watch: "https://animepahe.pw/anime/01a18fed-ab33-ccf0-d63e-6a53608593e5"
   },
   {
     name: "Magi: The Labyrinth of Magic",
     image: "images/magi.jpg",
-    desc: "A boy explores mysterious dungeons filled with magic, kings, and powerful ancient forces."
+    desc: "A boy explores mysterious dungeons filled with magic, kings, and powerful ancient forces.",
+    watch: "https://animepahe.pw/anime/a0c511a5-e671-32b0-7d07-a6adf9357057"
   },
   {
     name: "The Seven Deadly Sins",
