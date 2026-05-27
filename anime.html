@@ -57,6 +57,49 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+  const name = localStorage.getItem("selectedAnime");
+
+  if (!name) return;
+
+  // combine all anime arrays (same ones from main file)
+  const allAnime = [
+    ...animeData,
+    ...action,
+    ...adventure,
+    ...sports,
+    ...romance,
+    ...ecchi,
+    ...mystery,
+    ...comedy,
+    ...fantasy,
+    ...isekai,
+    ...sliceOfLife,
+    ...schoolLife,
+    ...recent
+  ];
+
+  const anime = allAnime.find(a => a.name === name);
+
+  if (!anime) return;
+
+  // set title (optional)
+  document.getElementById("animeTitle").textContent = anime.name;
+
+  // set image (optional)
+  document.getElementById("animeImg").src = anime.image;
+
+  // LOAD VIDEO
+  const player = document.getElementById("videoPlayer");
+
+  if (anime.watch) {
+    player.src = anime.watch;
+  } else {
+    player.style.display = "none";
+    document.getElementById("noVideo").textContent = "No video available";
+  }
+});
+
   document.title = anime.name + " | Karma's Hub";
 
   container.innerHTML = `
@@ -159,5 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+<div class="video-box">
+  <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
 
 **whatever you see on the watch page is no where linked to karma's hub or will it be blamed on karma's hub**

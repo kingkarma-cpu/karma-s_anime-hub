@@ -633,7 +633,7 @@ const ecchi = [
     name: "Keijo",
     image: "images/keijo.jfif",
     desc: "",
-    watch: ""
+    watch: "watch.html?id=keijo"
   },
     {
     name: "Shimoneta",
@@ -1753,4 +1753,28 @@ if (favs.length === 0) {
       </div>
     `;
   });
+}
+
+function loadEpisode(animeName, index) {
+  const anime = animeDatabase[animeName];
+
+  const iframe = document.getElementById("videoPlayer");
+
+  iframe.src = anime.episodes[index].url;
+}
+
+
+
+const animeDatabase = {
+  keijo: {
+    episodes: [
+      { ep: 1, url: "https://streamtape.com/e/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4" },
+        { ep: 2, url: "https://streamtape.com/e/8RJMj9ZDDjilK9/AnimePahe_Keijo_-_02_BD_720p_Retail.mp4" },
+    ]
+  }
+};
+
+function loadEpisode(animeName, index) {
+  const anime = animeDatabase[animeName];
+  document.getElementById("player").src = anime.episodes[index].url;
 }
