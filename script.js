@@ -1768,7 +1768,7 @@ function loadEpisode(animeName, index) {
 const animeDatabase = {
   keijo: {
     episodes: [
-      { ep: 1, url: "https://streamtape.com/e/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4" },
+      { ep: 1, url: "https://www.w3schools.com/html/mov_bbb.mp4" },
         { ep: 2, url: "https://streamtape.com/e/8RJMj9ZDDjilK9/AnimePahe_Keijo_-_02_BD_720p_Retail.mp4" },
     ]
   }
