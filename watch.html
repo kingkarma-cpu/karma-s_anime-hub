@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Watch Anime</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <h1 onclick="window.location.href='index.html'" style="cursor:pointer;">
+    🐔 Karma's Anime Hub
+  </h1>
+</nav>
+
+<h2 id="animeTitle"></h2>
+
+<!-- VIDEO PLAYER -->
+<video id="videoPlayer" controls width="100%" height="400"></video>
+
+<!-- EPISODES -->
+<div id="episodeList" style="margin-top:20px;"></div>
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. get anime id from URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  // 2. get anime from database (must exist in script.js)
+  const anime = animeDatabase[id];
+
+  if (!anime) {
+    document.body.innerHTML = "<h2>❌ Anime not found</h2>";
+    return;
+  }
+
+  // 3. set title
+  document.getElementById("animeTitle").innerText = anime.name;
+
+  const player = document.getElementById("videoPlayer");
+  const list = document.getElementById("episodeList");
+
+  // 4. load episode function
+  function loadEpisode(index) {
+    player.src = anime.episodes[index].url;
+  }
+
+  // 5. create episode buttons
+  anime.episodes.forEach((ep, i) => {
+    const btn = document.createElement("button");
+    btn.innerText = "Episode " + ep.ep;
+
+    btn.onclick = () => loadEpisode(i);
+
+    list.appendChild(btn);
+  });
+
+  // 6. auto play first episode
+  loadEpisode(0);
+
+});
+</script>
+
+</body>
+</html>
