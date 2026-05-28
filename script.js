@@ -1788,3 +1788,51 @@ localStorage.setItem("selectedAnime", JSON.stringify(anime));
 window.location.href = "watch.html";
 
 player.src = toEmbed(anime.episodes[0]);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const anime = JSON.parse(localStorage.getItem("selectedAnime"));
+
+  if (!anime || !anime.episodes) {
+    document.body.innerHTML = "<h2>❌ Anime not found or no episodes</h2>";
+    return;
+  }
+
+  document.getElementById("animeTitle").innerText = anime.name;
+
+  const player = document.getElementById("videoPlayer");
+  const list = document.getElementById("episodeList");
+
+  function toPlayable(url) {
+    // If it's MP4 → ok
+    // If it's YouTube → convert to embed (IMPORTANT FIX)
+
+    if (url.includes("youtube.com/watch")) {
+      return url.replace("watch?v=", "embed/");
+    }
+
+    if (url.includes("youtu.be/")) {
+      return "https://www.youtube.com/embed/" + url.split("youtu.be/")[1];
+    }
+
+    return url;
+  }
+
+  function loadEpisode(index) {
+    const ep = anime.episodes[index];
+    player.src = toPlayable(ep.url || ep);
+  }
+
+  anime.episodes.forEach((ep, i) => {
+
+    const btn = document.createElement("button");
+    btn.innerText = "Episode " + (ep.ep || (i + 1));
+
+    btn.onclick = () => loadEpisode(i);
+
+    list.appendChild(btn);
+  });
+
+  loadEpisode(0);
+
+});
