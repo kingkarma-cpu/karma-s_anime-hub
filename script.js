@@ -633,7 +633,12 @@ const ecchi = [
     name: "Keijo",
     image: "images/keijo.jfif",
     desc: "",
-    watch: "watch.html?id=keijo"
+    watch: "watch.html?id=keijo",
+    episodes:
+    ["https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4",
+      "https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4"
+
+    ]
   },
     {
     name: "Shimoneta",
@@ -1778,3 +1783,8 @@ function loadEpisode(animeName, index) {
   const anime = animeDatabase[animeName];
   document.getElementById("player").src = anime.episodes[index].url;
 }
+
+localStorage.setItem("selectedAnime", JSON.stringify(anime));
+window.location.href = "watch.html";
+
+player.src = toEmbed(anime.episodes[0]);

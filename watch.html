@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const id = params.get("id");
 
   // 2. get anime from database (must exist in script.js)
-  const anime = animeDatabase[id];
+const anime = JSON.parse(localStorage.getItem("selectedAnime"));
 
   if (!anime) {
     document.body.innerHTML = "<h2>❌ Anime not found</h2>";
