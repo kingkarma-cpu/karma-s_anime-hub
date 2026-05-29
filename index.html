@@ -4,64 +4,16 @@
   <meta name="google-adsense-account" content="ca-pub-4589241904256171">
   <title>GrandLine HUB</title>
   <link rel="stylesheet" href="style.css">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" href="images/favicon.png?v=999">
 </head>
 
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>GrandLine Hub</h1>
-      <p class="tagline">The Grand Line of Anime — Everything Starts Here</p>
-      <small class="byline">by Karma</small>
-
-      <button onclick="document.getElementById('searchBar').scrollIntoView({behavior:'smooth'})">
-        Set Sail ⚓
-      </button>
-    </div>
-  </header>
-
-  <div class="row-wrapper">
-
-  <button class="scroll-btn left" onclick="scrollRow('recent', -300)">‹</button>
-
-  <div class="anime-grid" id="recent"></div>
-
-  <button class="scroll-btn right" onclick="scrollRow('recent', 300)">›</button>
-
-</div>
-
+  <!-- NAVBAR -->
   <nav>
     <h1>🏴‍☠️ GrandLine Hub</h1>
     <small style="color:#aaa;">by Karma</small>
-
-    <section class="featured-banner">
-
-  <div class="banner-content">
-
-    <h2>🔥 Featured Anime</h2>
-    <h1 id="featuredTitle">Attack on Titan</h1>
-
-    <p id="featuredDesc">
-      Humans fight giant Titans while uncovering the truth behind their world.
-    </p>
-
-    <div class="banner-buttons">
-      <button onclick="goToAnime('Attack on Titan')">▶ Watch</button>
-      <button onclick="openTrailer({name:'Attack on Titan'})">ℹ Trailer</button>
-    </div>
-
-  </div>
-
-  <section class="anime-section">
-  <h2>Continue Watching ⚡</h2>
-  <div class="anime-grid" id="continueWatching"></div>
-</section>
-
-</section>
 
     <a href="favorites.html" style="color:white; margin-left:20px;">
       My Favorites ❤️
@@ -83,85 +35,122 @@
     </select>
   </nav>
 
+  <!-- FEATURED -->
+  <section class="featured-banner">
+    <div class="banner-content">
+
+      <h2>🔥 Featured Anime</h2>
+      <h1 id="featuredTitle">Attack on Titan</h1>
+
+      <p id="featuredDesc">
+        Humans fight giant Titans while uncovering the truth behind their world.
+      </p>
+
+      <div class="banner-buttons">
+        <button onclick="goToAnime('Attack on Titan')">▶ Watch</button>
+        <button onclick="openTrailer({name:'Attack on Titan'})">ℹ Trailer</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTINUE WATCHING -->
+  <section class="anime-section">
+    <h2>Continue Watching ⚡</h2>
+    <div class="anime-grid" id="continueWatching"></div>
+  </section>
+
   <!-- SEARCH -->
   <input type="text" id="searchBar" placeholder="Search anime... 🔍">
 
-  <!-- MOST RECENT -->
-  <section class="anime-section">
-    <h2>Most Recent</h2>
+  <!-- RECENT -->
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('recent', -300)">‹</button>
     <div class="anime-grid" id="recent"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('recent', 300)">›</button>
+  </div>
 
   <!-- ACTION -->
-  <section class="anime-section">
-    <h2>Action</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('action', -300)">‹</button>
     <div class="anime-grid" id="action"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('action', 300)">›</button>
+  </div>
 
   <!-- ROMANCE -->
-  <section class="anime-section">
-    <h2>Romance</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('romance', -300)">‹</button>
     <div class="anime-grid" id="romance"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('romance', 300)">›</button>
+  </div>
 
   <!-- COMEDY -->
-  <section class="anime-section">
-    <h2>Comedy</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('comedy', -300)">‹</button>
     <div class="anime-grid" id="comedy"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('comedy', 300)">›</button>
+  </div>
 
   <!-- ADVENTURE -->
-  <section class="anime-section">
-    <h2>Adventure</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('adventure', -300)">‹</button>
     <div class="anime-grid" id="adventure"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('adventure', 300)">›</button>
+  </div>
 
   <!-- SPORTS -->
-  <section class="anime-section">
-    <h2>Sports</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('sports', -300)">‹</button>
     <div class="anime-grid" id="sports"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('sports', 300)">›</button>
+  </div>
 
   <!-- ECCHI -->
-  <section class="anime-section">
-    <h2>Ecchi</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('ecchi', -300)">‹</button>
     <div class="anime-grid" id="ecchi"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('ecchi', 300)">›</button>
+  </div>
 
   <!-- MYSTERY -->
-  <section class="anime-section">
-    <h2>Mystery</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('mystery', -300)">‹</button>
     <div class="anime-grid" id="mystery"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('mystery', 300)">›</button>
+  </div>
 
   <!-- FANTASY -->
-  <section class="anime-section">
-    <h2>Fantasy</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('fantasy', -300)">‹</button>
     <div class="anime-grid" id="fantasy"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('fantasy', 300)">›</button>
+  </div>
 
   <!-- ISEKAI -->
-  <section class="anime-section">
-    <h2>Isekai</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('isekai', -300)">‹</button>
     <div class="anime-grid" id="isekai"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('isekai', 300)">›</button>
+  </div>
 
   <!-- SCHOOL LIFE -->
-  <section class="anime-section">
-    <h2>SchoolLife</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('schoolLife', -300)">‹</button>
     <div class="anime-grid" id="schoolLife"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('schoolLife', 300)">›</button>
+  </div>
 
   <!-- SLICE OF LIFE -->
-  <section class="anime-section">
-    <h2>sliceOfLife</h2>
+  <div class="row-wrapper">
+    <button class="scroll-btn left" onclick="scrollRow('sliceOfLife', -300)">‹</button>
     <div class="anime-grid" id="sliceOfLife"></div>
-  </section>
+    <button class="scroll-btn right" onclick="scrollRow('sliceOfLife', 300)">›</button>
+  </div>
 
-  <!-- JS FILE -->
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 
-  <!-- TRAILER MODAL (FIXED - ONLY ONE VERSION) -->
+  <!-- MODAL -->
   <div id="trailerModal" class="modal">
     <div class="modal-content">
 
