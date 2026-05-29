@@ -1460,30 +1460,7 @@ const schoolLife = [
 ];
 
 
-// ================= GLOBAL ANIME LIST =================
-const allAnimeFlat = [
-  ...animeData,
-  ...action,
-  ...adventure,
-  ...sports,
-  ...romance,
-  ...ecchi,
-  ...mystery,
-  ...comedy,
-  ...fantasy,
-  ...isekai,
-  ...sliceOfLife,
-  ...schoolLife,
-  ...recent
-];
-
 console.log("Anime HUB JS loaded");
-
-
-
-
-
-
 
 // ================= GLOBAL LIST =================
 const allAnime = [
@@ -1502,28 +1479,22 @@ const allAnime = [
   ...schoolLife
 ];
 
-
 // ================= CREATE CARD =================
 function createCard(anime) {
-
   return `
     <div class="anime-card" onclick="goToAnime('${anime.name.replace(/'/g, "\\'")}')">
 
       <div class="poster-wrapper">
-
         <img src="${anime.image}" alt="${anime.name}">
 
         <div class="overlay">
           <h3>${anime.name}</h3>
         </div>
-
       </div>
 
     </div>
   `;
 }
-
-
 
 // ================= DISPLAY =================
 function displayAnime(list, containerId) {
@@ -1533,11 +1504,9 @@ function displayAnime(list, containerId) {
   container.innerHTML = list.map(createCard).join("");
 }
 
-
 // ================= PAGE LOAD =================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // LOAD SECTIONS
   displayAnime(recent, "recent");
   displayAnime(action, "action");
   displayAnime(romance, "romance");
@@ -1554,40 +1523,49 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSearch();
   setupGenreFilter();
   setupModal();
+  loadContinueWatching(allAnime);
 });
 
-
-// ================= OPEN ANIME PAGE =================
+// ================= NAVIGATION =================
 function goToAnime(name) {
+  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
+
+  if (!watched.includes(name)) {
+    watched.unshift(name);
+  }
+
+  localStorage.setItem("continueWatching", JSON.stringify(watched));
+
   localStorage.setItem("selectedAnime", name);
   window.location.href = "anime.html";
 }
 
+// ================= CONTINUE WATCHING =================
+function loadContinueWatching(animeList) {
+  const container = document.getElementById("continueWatching");
+  if (!container) return;
+
+  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
+
+  container.innerHTML = "";
+
+  watched.forEach(name => {
+    const anime = animeList.find(a => a.name === name);
+    if (anime) container.innerHTML += createCard(anime);
+  });
+}
 
 // ================= SEARCH =================
-
 function setupSearch() {
   const searchBar = document.getElementById("searchBar");
-
-  console.log("Search bar found:", searchBar); // DEBUG
-
   if (!searchBar) return;
 
   searchBar.addEventListener("input", () => {
     const value = searchBar.value.toLowerCase().trim();
 
-    const cards = document.querySelectorAll(".card");
-
-    console.log("Cards found:", cards.length); // DEBUG
-
-    cards.forEach(card => {
-      const name = (card.getAttribute("data-name") || "").toLowerCase();
-
-      if (name.includes(value)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+    document.querySelectorAll(".anime-card").forEach(card => {
+      const name = card.innerText.toLowerCase();
+      card.style.display = name.includes(value) ? "block" : "none";
     });
   });
 }
@@ -1599,27 +1577,26 @@ function setupGenreFilter() {
 
   genreFilter.addEventListener("change", () => {
     const selected = genreFilter.value.toLowerCase();
-    const sections = document.querySelectorAll(".anime-section");
 
-    sections.forEach(section => {
+    document.querySelectorAll(".anime-section").forEach(section => {
       const title = section.querySelector("h2").textContent.toLowerCase();
 
-      if (selected === "all") {
-        section.style.display = "block";
-      } else {
-        section.style.display = title.includes(selected) ? "block" : "none";
-      }
+      section.style.display =
+        selected === "all" || title.includes(selected)
+          ? "block"
+          : "none";
     });
   });
 }
 
-
 // ================= TRAILER MODAL =================
 function openTrailer(anime) {
+  if (!anime || !anime.trailer) return;
+
   const modal = document.getElementById("trailerModal");
   const player = document.getElementById("modalPlayer");
 
-  if (!anime.trailer) return;
+  if (!modal || !player) return;
 
   let url = anime.trailer;
 
@@ -1640,8 +1617,7 @@ function openTrailer(anime) {
   `;
 }
 
-
-// ================= MODAL SETUP =================
+// ================= MODAL =================
 function setupModal() {
   const modal = document.getElementById("trailerModal");
   const closeBtn = document.getElementById("closeModal");
@@ -1659,199 +1635,4 @@ function setupModal() {
       document.getElementById("modalPlayer").innerHTML = "";
     }
   };
-}
-
-
-// ================= FAVORITES =================
-function toggleFavorite(name) {
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-  if (favorites.includes(name)) {
-    favorites = favorites.filter(f => f !== name);
-  } else {
-    favorites.push(name);
-  }
-
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-
-  // update UI instantly
-  document.querySelectorAll(".card").forEach(card => {
-    if (card.dataset.name === name) {
-      const btn = card.querySelector(".favBtn");
-      btn.style.color = favorites.includes(name) ? "red" : "white";
-    }
-  });
-}
-
-
-// ================= FAVORITES PAGE =================
-function loadFavoritesPage() {
-  const container = document.getElementById("favoritesContainer");
-  if (!container) return;
-
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-  const favAnime = allAnime.filter(a => favorites.includes(a.name));
-
-  container.innerHTML = favAnime.length
-    ? favAnime.map(createCard).join("")
-    : "<h2>No favorites yet ❤️</h2>";
-}
-
-
-document.querySelector(".fav-btn").addEventListener("click", function () {
-  this.classList.toggle("active");
-
-  if (this.classList.contains("active")) {
-    this.innerText = "❤️ Added";
-  } else {
-    this.innerText = "❤️ Add to Favorites";
-  }
-});
-
-document.querySelector(".fav-btn").addEventListener("click", function () {
-  let animeName = document.querySelector(".anime-title").innerText;
-  let animeImg = document.querySelector(".anime-img").src;
-
-  let favs = JSON.parse(localStorage.getItem("favs")) || [];
-
-  let exists = favs.find(a => a.name === animeName);
-
-  if (!exists) {
-    favs.push({
-      name: animeName,
-      image: animeImg
-    });
-
-    localStorage.setItem("favs", JSON.stringify(favs));
-    alert("Added to favorites ❤️");
-  }
-});
-
-let favs = JSON.parse(localStorage.getItem("favs")) || [];
-
-let container = document.getElementById("favContainer");
-
-container.innerHTML = "";
-
-if (favs.length === 0) {
-  container.innerHTML = "<p>No favorites yet</p>";
-} else {
-  favs.forEach(anime => {
-    container.innerHTML += `
-      <div class="card">
-        <img src="${anime.image}">
-        <h3>${anime.name}</h3>
-      </div>
-    `;
-  });
-}
-
-function loadEpisode(animeName, index) {
-  const anime = animeDatabase[animeName];
-
-  const iframe = document.getElementById("videoPlayer");
-
-  iframe.src = anime.episodes[index].url;
-}
-
-
-
-const animeDatabase = {
-  keijo: {
-    episodes: [
-      { ep: 1, url: "https://www.w3schools.com/html/mov_bbb.mp4" },
-        { ep: 2, url: "https://streamtape.com/e/8RJMj9ZDDjilK9/AnimePahe_Keijo_-_02_BD_720p_Retail.mp4" },
-    ]
-  }
-};
-
-function loadEpisode(animeName, index) {
-  const anime = animeDatabase[animeName];
-  document.getElementById("player").src = anime.episodes[index].url;
-}
-
-localStorage.setItem("selectedAnime", JSON.stringify(anime));
-window.location.href = "watch.html";
-
-player.src = toEmbed(anime.episodes[0]);
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const anime = JSON.parse(localStorage.getItem("selectedAnime"));
-
-  if (!anime || !anime.episodes) {
-    document.body.innerHTML = "<h2>❌ Anime not found or no episodes</h2>";
-    return;
-  }
-
-  document.getElementById("animeTitle").innerText = anime.name;
-
-  const player = document.getElementById("videoPlayer");
-  const list = document.getElementById("episodeList");
-
-  function toPlayable(url) {
-    // If it's MP4 → ok
-    // If it's YouTube → convert to embed (IMPORTANT FIX)
-
-    if (url.includes("youtube.com/watch")) {
-      return url.replace("watch?v=", "embed/");
-    }
-
-    if (url.includes("youtu.be/")) {
-      return "https://www.youtube.com/embed/" + url.split("youtu.be/")[1];
-    }
-
-    return url;
-  }
-
-  function loadEpisode(index) {
-    const ep = anime.episodes[index];
-    player.src = toPlayable(ep.url || ep);
-  }
-
-  anime.episodes.forEach((ep, i) => {
-
-    const btn = document.createElement("button");
-    btn.innerText = "Episode " + (ep.ep || (i + 1));
-
-    btn.onclick = () => loadEpisode(i);
-
-    list.appendChild(btn);
-  });
-
-  loadEpisode(0);
-
-});
-
-function goToAnime(name) {
-
-  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
-
-  if (!watched.includes(name)) {
-    watched.unshift(name);
-  }
-
-  localStorage.setItem("continueWatching", JSON.stringify(watched));
-
-  // your existing navigation logic
-  window.location.href = `anime.html?name=${encodeURIComponent(name)}`;
-}
-
-function loadContinueWatching(animeList) {
-
-  const container = document.getElementById("continueWatching");
-  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
-
-  container.innerHTML = "";
-
-  watched.forEach(name => {
-
-    const anime = animeList.find(a => a.name === name);
-
-    if (anime) {
-      container.innerHTML += createCard(anime);
-    }
-
-  });
 }
