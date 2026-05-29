@@ -1636,3 +1636,13 @@ function setupModal() {
     }
   };
 }
+
+function scrollRow(id, amount) {
+  const row = document.getElementById(id);
+  if (!row) return;
+
+  row.scrollBy({
+    left: amount,
+    behavior: "smooth"
+  });
+}

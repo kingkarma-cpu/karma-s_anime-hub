@@ -369,3 +369,45 @@ nav a {
     height: 220px;
   }
 }
+
+/* WRAPPER */
+.row-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ROW STILL SCROLLS */
+.anime-grid {
+  flex: 1;
+}
+
+/* BUTTONS */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  width: 40px;
+  height: 80px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  background: rgba(229, 9, 20, 0.8);
+}
+
+/* LEFT BUTTON */
+.scroll-btn.left {
+  left: 0;
+}
+
+/* RIGHT BUTTON */
+.scroll-btn.right {
+  right: 0;
+}
