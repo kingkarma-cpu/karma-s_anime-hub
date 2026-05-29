@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="google-adsense-account" content="ca-pub-4589241904256171">
-  <title>Karma's_Anime-HUB</title>
+  <title>GrandLine HUB</title>
   <link rel="stylesheet" href="style.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,28 +12,65 @@
 
 <body>
 
+  <header class="hero">
+    <div class="hero-content">
+      <h1>GrandLine Hub</h1>
+      <p class="tagline">The Grand Line of Anime — Everything Starts Here</p>
+      <small class="byline">by Karma</small>
+
+      <button onclick="document.getElementById('searchBar').scrollIntoView({behavior:'smooth'})">
+        Set Sail ⚓
+      </button>
+    </div>
+  </header>
+
   <nav>
-    <h1>🔥 Karma's_Anime-HUB</h1>
+    <h1>🏴‍☠️ GrandLine Hub</h1>
+    <small style="color:#aaa;">by Karma</small>
+
+    <section class="featured-banner">
+
+  <div class="banner-content">
+
+    <h2>🔥 Featured Anime</h2>
+    <h1 id="featuredTitle">Attack on Titan</h1>
+
+    <p id="featuredDesc">
+      Humans fight giant Titans while uncovering the truth behind their world.
+    </p>
+
+    <div class="banner-buttons">
+      <button onclick="goToAnime('Attack on Titan')">▶ Watch</button>
+      <button onclick="openTrailer({name:'Attack on Titan'})">ℹ Trailer</button>
+    </div>
+
+  </div>
+
+  <section class="anime-section">
+  <h2>Continue Watching ⚡</h2>
+  <div class="anime-grid" id="continueWatching"></div>
+</section>
+
+</section>
 
     <a href="favorites.html" style="color:white; margin-left:20px;">
       My Favorites ❤️
     </a>
 
-
     <select id="genreFilter">
-  <option value="all">All Genres</option>
-  <option value="action">Action</option>
-  <option value="romance">Romance</option>
-  <option value="comedy">Comedy</option>
-  <option value="fantasy">Fantasy</option>
-  <option value="sports">Sports</option>
-  <option value="adventure">Adventure</option>
-  <option value="ecchi">Ecchi</option>
-  <option value="mystery">Mystery</option>
-  <option value="isekai">Isekai</option>
-  <option value="schoolLife">SchoolLife</option>
-  <option value="sliceOfLife">sliceOfLife</option>
-</select>
+      <option value="all">All Genres</option>
+      <option value="action">Action</option>
+      <option value="romance">Romance</option>
+      <option value="comedy">Comedy</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sports">Sports</option>
+      <option value="adventure">Adventure</option>
+      <option value="ecchi">Ecchi</option>
+      <option value="mystery">Mystery</option>
+      <option value="isekai">Isekai</option>
+      <option value="schoolLife">SchoolLife</option>
+      <option value="sliceOfLife">sliceOfLife</option>
+    </select>
   </nav>
 
   <!-- SEARCH -->
@@ -69,13 +106,13 @@
     <div class="anime-grid" id="adventure"></div>
   </section>
 
-   <!-- SPORTS -->
+  <!-- SPORTS -->
   <section class="anime-section">
     <h2>Sports</h2>
     <div class="anime-grid" id="sports"></div>
   </section>
 
-   <!-- ECCHI -->
+  <!-- ECCHI -->
   <section class="anime-section">
     <h2>Ecchi</h2>
     <div class="anime-grid" id="ecchi"></div>
@@ -110,39 +147,32 @@
     <h2>sliceOfLife</h2>
     <div class="anime-grid" id="sliceOfLife"></div>
   </section>
-  
+
   <!-- JS FILE -->
   <script src="script.js"></script>
 
+  <!-- TRAILER MODAL (FIXED - ONLY ONE VERSION) -->
   <div id="trailerModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal">&times;</span>
-    <div id="modalPlayer"></div>
-  </div>
-</div>
+    <div class="modal-content">
 
-<!-- TRAILER MODAL -->
-<div id="trailerModal" class="modal">
-  <div class="modal-content">
+      <span id="closeModal">&times;</span>
 
-    <span id="closeModal">&times;</span>
+      <h2 id="modalTitle"></h2>
 
-    <h2 id="modalTitle"></h2>
+      <div class="video-wrapper">
+        <iframe id="modalVideo"
+          width="100%"
+          height="400"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; encrypted-media">
+        </iframe>
+      </div>
 
-    <div class="video-wrapper">
-      <iframe id="modalVideo"
-        width="100%"
-        height="400"
-        frameborder="0"
-        allowfullscreen
-        allow="autoplay; encrypted-media">
-      </iframe>
+      <p id="modalDesc"></p>
+
     </div>
-
-    <p id="modalDesc"></p>
-
   </div>
-</div>
 
 </body>
 </html>

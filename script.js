@@ -1506,31 +1506,18 @@ const allAnime = [
 // ================= CREATE CARD =================
 function createCard(anime) {
 
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  const isFav = favorites.includes(anime.name);
-
   return `
-    <div class="card" data-name="${anime.name}" onclick="goToAnime('${anime.name.replace(/'/g, "\\'")}')">
+    <div class="anime-card" onclick="goToAnime('${anime.name.replace(/'/g, "\\'")}')">
 
-      <img src="${anime.image}">
-      <h3 class="anime-title">${anime.name}</h3>
+      <div class="poster-wrapper">
 
-      <!-- FAVORITE -->
-      <button 
-        class="favBtn"
-        style="color:${isFav ? 'red' : 'white'}"
-        onclick="event.stopPropagation(); toggleFavorite('${anime.name.replace(/'/g, "\\'")}')"
-      >
-        ❤️
-      </button>
+        <img src="${anime.image}" alt="${anime.name}">
 
-      <!-- TRAILER (ALWAYS SHOW BUTTON, DISABLE IF NONE) -->
-      <button class="trailerBtn"
-        onclick='event.stopPropagation(); openTrailer(${JSON.stringify(anime)})'
-        ${!anime.trailer ? "style='opacity:0.4; pointer-events:none'" : ""}
-      >
-        ▶ Trailer
-      </button>
+        <div class="overlay">
+          <h3>${anime.name}</h3>
+        </div>
+
+      </div>
 
     </div>
   `;
@@ -1836,3 +1823,35 @@ document.addEventListener("DOMContentLoaded", () => {
   loadEpisode(0);
 
 });
+
+function goToAnime(name) {
+
+  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
+
+  if (!watched.includes(name)) {
+    watched.unshift(name);
+  }
+
+  localStorage.setItem("continueWatching", JSON.stringify(watched));
+
+  // your existing navigation logic
+  window.location.href = `anime.html?name=${encodeURIComponent(name)}`;
+}
+
+function loadContinueWatching(animeList) {
+
+  const container = document.getElementById("continueWatching");
+  let watched = JSON.parse(localStorage.getItem("continueWatching")) || [];
+
+  container.innerHTML = "";
+
+  watched.forEach(name => {
+
+    const anime = animeList.find(a => a.name === name);
+
+    if (anime) {
+      container.innerHTML += createCard(anime);
+    }
+
+  });
+}
