@@ -1,8 +1,15 @@
-/* ================= GLOBAL ================= */
-body {
+/* ================= RESET ================= */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
   background: #0b0f1a;
+  font-family: Arial, sans-serif;
   color: white;
 }
 
@@ -13,43 +20,23 @@ nav {
   justify-content: space-between;
   background: #111827;
   padding: 14px 20px;
-
   position: sticky;
   top: 0;
   z-index: 1000;
-
   flex-wrap: wrap;
 }
 
-/* CENTER TITLE */
 nav h1 {
-  flex: 1;
-  text-align: center;
-  margin: 0 auto;
   font-size: 22px;
+  text-align: center;
+  flex: 1;
 }
 
-/* GENRE + FAVORITES STACK */
-#genreFilter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-/* FAVORITES LINK (UNDER GENRE VISUALLY) */
 nav a {
-  position: absolute;
-  right: 20px;
-  top: 45px;   /* pushes it under genre */
-  font-size: 13px;
+  margin-left: auto;
+  color: red;
   text-decoration: none;
-  color: rgb(255, 0, 0);
-  opacity: 0.85;
-}
-
-nav a:hover {
-  opacity: 1;
+  font-size: 13px;
 }
 
 /* ================= SEARCH ================= */
@@ -65,39 +52,48 @@ nav a:hover {
 
 /* ================= SECTIONS ================= */
 .anime-section {
-  padding: 10px 15px;
+  padding: 15px;
+  position: relative;
+  background: #0b0f1a;
 }
 
 .anime-section h2 {
-  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-/* ================= GRID (WIDER CARDS) ================= */
 /* ================= NETFLIX ROW ================= */
 .anime-grid {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding: 10px 15px;
+  overflow-y: hidden;
+  padding: 10px 0;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .anime-grid::-webkit-scrollbar {
   display: none;
 }
 
-/* ================= NETFLIX CARD ================= */
+/* ================= CARD ================= */
 .anime-card {
-  min-width: 160px;
-  height: 240px;
-  position: relative;
+  min-width: 140px;
+  height: 210px;
   flex: 0 0 auto;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  position: relative;
+  transition: transform 0.25s ease;
   scroll-snap-align: start;
+}
+
+.anime-card:hover {
+  transform: scale(1.08);
+  z-index: 5;
 }
 
 .anime-card img {
@@ -107,32 +103,25 @@ nav a:hover {
   transition: transform 0.3s ease;
 }
 
-/* hover zoom */
-.anime-card:hover {
-  transform: scale(1.08);
-  z-index: 5;
-}
-
 .anime-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* overlay */
+/* ================= OVERLAY ================= */
 .poster-wrapper {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 10px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  padding: 8px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   opacity: 0;
-  transition: 0.3s;
-  color: white;
+  transition: 0.3s ease;
 }
 
 .anime-card:hover .overlay {
@@ -140,12 +129,10 @@ nav a:hover {
 }
 
 .overlay h3 {
-  font-size: 13px;
-  margin: 0;
+  font-size: 12px;
 }
 
-/* ================= MODAL (KEEP CLEAN) ================= */
-/* ================= MODAL BACKDROP ================= */
+/* ================= MODAL ================= */
 .modal {
   display: none;
   position: fixed;
@@ -155,249 +142,127 @@ nav a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
 }
 
-/* ================= MODAL BOX ================= */
 .modal-content {
   background: #111827;
-  width: 80%;
+  width: 85%;
   max-width: 800px;
   margin: 5% auto;
   padding: 20px;
   border-radius: 12px;
   position: relative;
-  color: white;
 }
 
-/* CLOSE BUTTON */
 #closeModal {
   position: absolute;
-  right: 15px;
   top: 10px;
+  right: 15px;
   font-size: 28px;
   cursor: pointer;
 }
 
-/* VIDEO RESPONSIVE */
+/* ================= VIDEO ================= */
 .video-wrapper iframe {
+  width: 100%;
+  height: 400px;
   border-radius: 10px;
 }
 
-/* TITLE */
-#modalTitle {
-  margin-top: 0;
-}
-
-/* DESCRIPTION */
-#modalDesc {
-  color: #bbb;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* ===== ANIME PAGE ===== */
-
+/* ================= ANIME PAGE ================= */
 .anime-page {
   display: flex;
-  gap: 40px;
-  padding: 40px;
-  color: white;
-}
-
-/* LEFT */
-.anime-left {
-  flex: 1;
+  gap: 30px;
+  padding: 30px;
 }
 
 .anime-img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  width: 280px;
+  border-radius: 12px;
 }
 
-/* RIGHT */
-.anime-right {
-  flex: 2;
-}
-
-/* TITLE */
 .anime-title {
-  font-size: 34px;
-  border-bottom: 2px solid red;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-/* DESCRIPTION */
 .anime-desc {
   color: #ccc;
   line-height: 1.6;
   max-width: 600px;
 }
 
-/* BUTTON */
 .watch-btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 14px 22px;
-  background: #111827;
+  padding: 12px 18px;
+  background: #e50914;
   color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
 }
 
-.watch-btn:hover {
-  background: red;
-  transform: scale(1.05);
+/* ================= FEATURED BANNER ================= */
+.featured-banner {
+  height: 55vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)),
+    url("images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 12px;
 }
 
-.trailer-box iframe {
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  border: none;
+.banner-content h1 {
+  font-size: 38px;
+}
+
+.banner-content p {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.banner-buttons {
   margin-top: 15px;
+  display: flex;
+  gap: 10px;
 }
 
+.banner-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
+.banner-buttons button:first-child {
+  background: #e50914;
+  color: white;
+}
+
+.banner-buttons button:last-child {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .anime-page {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-  }
 
-  .anime-img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .anime-title {
-    font-size: 24px;
-  }
-
-  .anime-desc {
-    max-width: 100%;
-    font-size: 14px;
-  }
-
-  .trailer-box iframe {
-    width: 100%;
-    height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .watch-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.watch-btn:active {
-  transform: scale(0.97);
-}
-
-@media (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
   }
 
   nav h1 {
     font-size: 18px;
   }
-}
 
-@media (max-width: 768px) {
-  #genreFilter {
-    width: 100%;
-    justify-content: center;
-  }
-
-  nav a {
-    display: block;
-    text-align: center;
-    margin: 5px 0;
-  }
-}
-
-.fav-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #111827;
-  color: rgb(255, 255, 255);
-  border-radius: 8px;
-  border: 1px solid #2b3345;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.fav-btn:hover {
-  border-color: red;
-  background: rgba(255, 0, 0, 0.2);
-}
-
-.fav-btn:active {
-  transform: scale(0.97);
-  background: rgba(255, 0, 0, 0.3);
-  border-color: red;
-}
-
-/* ================= FAVORITES PAGE ONLY ================= */
-
-#favList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row */
-  gap: 15px;
-  padding: 15px;
-}
-
-#favList .card {
-  height: 220px;
-  border-radius: 10px;
-}
-
-#favList .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#favList .card h3 {
-  font-size: 12px;
-  padding: 4px 8px;
-}
-
-@media (max-width: 768px) {
-  #favList {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  #favList .card {
-    height: 180px;
-  }
-}
-
-#favList .card:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-
-  .anime-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
+  #searchBar {
+    width: 95%;
   }
 
   .anime-card {
@@ -409,83 +274,15 @@ nav a:hover {
     font-size: 11px;
   }
 
-}
-
-@media (max-width: 768px) {
-  nav a {
-    position: static;   /* removes absolute positioning */
-    display: block;
-    margin: 5px auto;
-    text-align: center;
+  .anime-page {
+    flex-direction: column;
   }
-}
 
-.video-box {
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
-}
+  .anime-img {
+    width: 100%;
+  }
 
-.video-box iframe {
-  width: 100%;
-  height: 450px;
-  border-radius: 10px;
-}
-
-/* ================= FEATURED BANNER ================= */
-.featured-banner {
-  height: 60vh;
-  background: linear-gradient(
-      to right,
-      rgba(0,0,0,0.9),
-      rgba(0,0,0,0.4)
-    ),
-    url("images/banner.jpg"); /* you can change image */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  color: white;
-  border-radius: 12px;
-  margin: 20px;
-}
-
-.banner-content {
-  max-width: 500px;
-}
-
-.banner-content h1 {
-  font-size: 40px;
-  margin: 10px 0;
-}
-
-.banner-content p {
-  color: #ccc;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.banner-buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.banner-buttons button {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.banner-buttons button:first-child {
-  background: #e50914;
-  color: white;
-}
-
-.banner-buttons button:last-child {
-  background: rgba(255,255,255,0.2);
-  color: white;
+  .video-wrapper iframe {
+    height: 220px;
+  }
 }
