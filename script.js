@@ -490,13 +490,13 @@ const romance = [
   },
   {
     name: "Darling In The Franxx",
-    image: "images/darling.jpeg",
+    image: "images/darling.jpg",
     desc: "",
     watch:""
   },
   {
     name: "Nisekoi",
-    image: "images/nisekoi.jpeg",
+    image: "images/nisekoi.jpg",
     desc: "",
     watch: ""
   },
@@ -513,7 +513,7 @@ const romance = [
   },
   {
     name: "Toradora!",
-    image: "images/toradora.jpeg",
+    image: "images/toradora.jpg",
     desc: "Two students help each other pursue their crushes but slowly develop unexpected feelings for one another."
   },
   {
@@ -568,7 +568,7 @@ const romance = [
   },
   {
     name: "Ao Haru Ride",
-    image: "images/aoharu.jpeg",
+    image: "images/aoharu.jpg",
     desc: "A girl reconnects with her first love, but both have changed in unexpected ways."
   },
   {
@@ -607,31 +607,31 @@ const ecchi = [
   },
   {
     name: "Prison School",
-    image: "images/prisonschool.jpeg",
+    image: "images/prisonschool.jpg",
     desc: "",
     watch:""
   },
   {
     name: "Highschool Of The Dead",
-    image: "images/hotd.jpeg",
+    image: "images/hotd.jpg",
     desc: "",
     watch:""
   },
   {
     name: "The Testament Of New Sister Devil",
-    image: "images/sisterdevil.jpeg",
+    image: "images/sisterdevil.jpg",
     desc: "",
     watch:""
   },
   {
     name: "To Love Ru",
-    image: "images/ru.jpeg",
+    image: "images/ru.jpg",
     desc: "",
     watch: ""
   },
   {
     name: "Keijo",
-    image: "images/keijo.jpeg",
+    image: "images/keijo.jpg",
     desc: "",
     watch: "watch.html?id=keijo",
     episodes:
@@ -1388,7 +1388,7 @@ const schoolLife = [
   },
   {
     name: "ReLIFE",
-    image: "images/relife.jpeg",
+    image: "images/relife.jpg",
     desc: "A man gets a second chance at high school life through a mysterious experiment."
   },
   {
