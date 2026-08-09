@@ -37,7 +37,8 @@ const animeData = [
     name: "Black Clover",
     image: "images/blackclover.jfif",
     desc: "Black clover is a story about a boy born without magical pwers in a world where everything is made of magic, Asta has to overcomwe adversity in order to achieve his dream of becoming wizard king",
-    watch: "https://animepahe.pw/anime/38183e8f-6e96-6cc3-a84d-0d35327f7b24"
+   freeLink: "",
+   subscriptionLink: ""
   },
   
   
@@ -126,7 +127,8 @@ const action = [
     name: "Black Clover",
     image: "images/blackclover.jfif",
     desc: "A magicless boy aims to become the Wizard King through hard work and rival battles.",
-    watch: "https://animepahe.pw/anime/6365dbe0-5a27-4369-b166-07a734cd6299"
+    freeLink: "",
+    subscriptionLink: ""
   },
   {
     name: "Akudama Drive",
@@ -247,8 +249,8 @@ const adventure = [
     name: "Black Clover",
     image: "images/blackclover.jpg",
     desc: "A boy without magic aims to become the Wizard King through determination and rivalry.",
-    freelink: "",
-    subscriptionlink:""
+    freeLink: "",
+    subscriptionLink:""
   },
   {
     name: "Fairy Tail",
@@ -306,11 +308,13 @@ const recent = [
   image: "images/steelballrun.jpg",
   desc: "Johnny Joestar joins a cross-country horse race across America, competing against dangerous opponents while uncovering a mysterious power tied to the Spin and ancient relics."
   },
-{
+ {
   name: "Black Clover",
   image: "images/blackclover.jfif",
-  desc: "Asta continues his journey to become the Wizard King, pushing beyond his limits as new threats emerge that challenge the entire Clover Kingdom."
-},
+  desc: "Asta continues his journey to become the Wizard King, pushing beyond his limits as new threats emerge that challenge the entire Clover Kingdom.",
+  freeLink: "",
+  subscriptionLink: ""
+ },
 {
   name: "Dandadan",
   image: "images/dandadan.jfif",
@@ -1019,6 +1023,8 @@ const fantasy = [
     name: "Black Clover",
     image: "images/blackclover.jpg",
     desc: "A boy born without magic trains to become the Wizard King.",
+    freeLink: "",
+    subscriptionLink: "",
     hidden: true
   },
   {
