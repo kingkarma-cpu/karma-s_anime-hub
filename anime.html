@@ -35,11 +35,40 @@
     <div id="trailerContainer" class="trailer-box"></div>
 
     <div class="anime-buttons">
-      <a id="watchBtn" target="_blank" class="watch-btn">▶ Watch Now</a>
+      <a id="watchBtn" class="watch-btn">▶ Watch Now</a>
 
       <button class="fav-btn">❤️ Add to Favorites</button>
     </div>
+
+    <div id="watchOptions" class="watch-options" style="display:none;">
+  <p>Where to Watch:</p>
+
+  <a id="freeWatchBtn" target="_blank" class="watch-btn">
+    🆓 Free to Watch
+  </a>
+
+  <a id="subscriptionWatchBtn" target="_blank" class="watch-btn">
+    💳 Subscription-based
+  </a>
+</div>
   </div>
+
+  <div id="watchPopup" class="watch-popup">
+  <div class="watch-popup-content">
+    <button id="closeWatchPopup" class="close-watch-popup">✕</button>
+
+    <h2>Where to Watch</h2>
+    <p>Choose how you want to watch:</p>
+
+    <a id="freeWatchBtn" class="watch-btn" target="_blank">
+      🆓 Free to Watch
+    </a>
+
+    <a id="subscriptionWatchBtn" class="watch-btn" target="_blank">
+      💳 Subscription-based
+    </a>
+  </div>
+</div>
 
 </div>
    <script src="script.js"></script>

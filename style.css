@@ -411,3 +411,48 @@ nav a {
 .scroll-btn.right {
   right: 0;
 }
+
+.watch-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.watch-popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  background: #111;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.watch-popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.watch-popup-content p {
+  margin-bottom: 20px;
+}
+
+.watch-popup-content .watch-btn {
+  display: block;
+  margin: 10px 0;
+}
+
+.close-watch-popup {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}

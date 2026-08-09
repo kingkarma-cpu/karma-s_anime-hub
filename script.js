@@ -246,7 +246,9 @@ const adventure = [
   {
     name: "Black Clover",
     image: "images/blackclover.jpg",
-    desc: "A boy without magic aims to become the Wizard King through determination and rivalry."
+    desc: "A boy without magic aims to become the Wizard King through determination and rivalry.",
+    freelink: "",
+    subscriptionlink:""
   },
   {
     name: "Fairy Tail",
