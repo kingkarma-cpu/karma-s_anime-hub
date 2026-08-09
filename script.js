@@ -490,13 +490,13 @@ const romance = [
   },
   {
     name: "Darling In The Franxx",
-    image: "images/franxx.jfif",
+    image: "images/darling.jpeg",
     desc: "",
     watch:""
   },
   {
     name: "Nisekoi",
-    image: "images/nisekoi.jfif",
+    image: "images/nisekoi.jpeg",
     desc: "",
     watch: ""
   },
@@ -513,7 +513,7 @@ const romance = [
   },
   {
     name: "Toradora!",
-    image: "images/toradora!.jfif",
+    image: "images/toradora.jpeg",
     desc: "Two students help each other pursue their crushes but slowly develop unexpected feelings for one another."
   },
   {
@@ -568,7 +568,7 @@ const romance = [
   },
   {
     name: "Ao Haru Ride",
-    image: "images/aoharu.jfif",
+    image: "images/aoharu.jpeg",
     desc: "A girl reconnects with her first love, but both have changed in unexpected ways."
   },
   {
@@ -607,31 +607,31 @@ const ecchi = [
   },
   {
     name: "Prison School",
-    image: "images/pschool.jfif",
+    image: "images/prisonschool.jpeg",
     desc: "",
     watch:""
   },
   {
     name: "Highschool Of The Dead",
-    image: "images/hotd.jfif",
+    image: "images/hotd.jpeg",
     desc: "",
     watch:""
   },
   {
     name: "The Testament Of New Sister Devil",
-    image: "images/sisdev.jfif",
+    image: "images/sisterdevil.jpeg",
     desc: "",
     watch:""
   },
   {
     name: "To Love Ru",
-    image: "images/ru.jfif",
+    image: "images/ru.jpeg",
     desc: "",
     watch: ""
   },
   {
     name: "Keijo",
-    image: "images/keijo.jfif",
+    image: "images/keijo.jpeg",
     desc: "",
     watch: "watch.html?id=keijo",
     episodes:
@@ -1289,7 +1289,7 @@ const sliceOfLife = [
   },
   {
     name: "My Little Monster",
-    image: "images/mylittlemonster.jpg",
+    image: "images/mylittlemonster.jfif",
     desc: "A strict top student’s life changes when she meets a violent but kind-hearted boy. Their unpredictable relationship grows through awkward school interactions and emotional development."
   },
   {
@@ -1309,7 +1309,7 @@ const sliceOfLife = [
   },
   {
     name: "My Clueless First Friend",
-    image: "images/cluelessfriend.jpg",
+    image: "images/clueless.jpg",
     desc: "A lonely girl who is constantly bullied in school meets a cheerful boy who treats her kindly. Their friendship slowly changes her school life and confidence."
   },
   {
@@ -1388,7 +1388,7 @@ const schoolLife = [
   },
   {
     name: "ReLIFE",
-    image: "images/relife.jfif",
+    image: "images/relife.jpeg",
     desc: "A man gets a second chance at high school life through a mysterious experiment."
   },
   {
@@ -1429,7 +1429,7 @@ const schoolLife = [
   },
   {
     name: "March Comes in Like a Lion",
-    image: "images/marchlion.jpg",
+    image: "images/marchcomes.jpg",
     desc: "A young professional shogi player struggles with loneliness and emotional healing.",
     hidden: true
   },
@@ -1447,7 +1447,7 @@ const schoolLife = [
   },
   {
     name: "Blend S",
-    image: "images/blends.jpg",
+    image: "images/blend.jpg",
     desc: "A girl works at a café where staff act out exaggerated personalities for customers.",
     hidden: true
   },
