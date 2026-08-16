@@ -4,12 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
-  background: #0b0f1a;
-  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(229, 9, 20, 0.08), transparent 30%),
+    #0b0f1a;
+  font-family: 'Manrope', sans-serif;
   color: white;
 }
 
@@ -83,17 +87,18 @@ nav a {
   min-width: 140px;
   height: 210px;
   flex: 0 0 auto;
-  border-radius: 10px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  transition: transform 0.25s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
   scroll-snap-align: start;
 }
 
 .anime-card:hover {
-  transform: scale(1.08);
+  transform: translateY(-5px) scale(1.04);
   z-index: 5;
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
 }
 
 .anime-card img {
@@ -174,9 +179,11 @@ nav a {
 /* ================= ANIME PAGE LAYOUT ================= */
 .anime-page {
   display: flex;
-  gap: 25px;
-  padding: 40px;
+  gap: 35px;
+  padding: 50px;
   align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* LEFT IMAGE */
@@ -185,10 +192,10 @@ nav a {
 }
 
 .anime-img {
-  width: 260px;
+  width: 280px;
   height: auto;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px rgba(0,0,0, 0.45);
   object-fit: cover;
 }
 
@@ -202,8 +209,9 @@ nav a {
 
 /* TITLE */
 .anime-title {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  margin-bottom: 14px;
   border-bottom: 2px solid #e50914;
   padding-bottom: 8px;
   width: fit-content;
@@ -412,47 +420,34 @@ nav a {
   right: 0;
 }
 
-.watch-popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+
+.episodes-options {
+  margin-top: 15px;
+  padding: 15px;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  max-width: 600px;
 }
 
-.watch-popup-content {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  padding: 30px;
-  border-radius: 15px;
-  background: #111;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.watch-popup-content h2 {
+.episodes-options p {
   margin-bottom: 10px;
+  color: #aaa;
 }
 
-.watch-popup-content p {
-  margin-bottom: 20px;
-}
-
-.watch-popup-content .watch-btn {
-  display: block;
-  margin: 10px 0;
-}
-
-.close-watch-popup {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  border: none;
-  background: none;
+.episode-link {
+  display: inline-block;
+  padding: 10px 14px;
+  margin: 5px;
+  background: #e50914;
   color: white;
-  font-size: 22px;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.episode-link:hover {
+  transform: translateY(-2px);
+  background: #ff1a25;
 }
