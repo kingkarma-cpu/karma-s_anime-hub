@@ -1672,3 +1672,39 @@ function scrollRow(id, amount) {
   });
 }
 
+document.getElementById("animeDesc").textContent =
+  anime.desc || "No description available";
+
+  const episodesBtn = document.getElementById("episodesBtn");
+const episodesOptions = document.getElementById("episodesOptions");
+
+if (anime.episodes && anime.episodes.length > 0) {
+
+  episodesBtn.addEventListener("click", () => {
+
+    if (episodesOptions.style.display === "none") {
+      episodesOptions.innerHTML = "<p>Episodes:</p>";
+
+      anime.episodes.forEach(episode => {
+        const episodeBtn = document.createElement("a");
+
+        episodeBtn.textContent = `Episode ${episode.number}`;
+        episodeBtn.href = episode.url;
+        episodeBtn.target = "_blank";
+        episodeBtn.rel = "noopener noreferrer";
+        episodeBtn.className = "episode-link";
+
+        episodesOptions.appendChild(episodeBtn);
+      });
+
+      episodesOptions.style.display = "block";
+
+    } else {
+      episodesOptions.style.display = "none";
+    }
+
+  });
+
+} else {
+  episodesBtn.style.display = "none";
+}
