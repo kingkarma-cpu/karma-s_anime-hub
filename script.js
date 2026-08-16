@@ -105,7 +105,15 @@ const action = [
   name: "Code Geass",
   image: "images/codegeass.jfif",
   desc: "A genius exiled prince gains the power of absolute command and starts a rebellion against a powerful empire while hiding his identity as Zero.",
-  watch: "https://animepahe.pw/anime/4658da79-4017-a8f4-c58d-5f56bfa1722b"
+  watch: "https://animepahe.pw/anime/4658da79-4017-a8f4-c58d-5f56bfa1722b",
+  episodes[
+    {number: 1,
+      url: "https://animepahe.pw/play/50687a43-d10f-a6f2-4209-02264788df7c/7df5c9225a05a085fcc1e14ffa4e227491b57853fd3a1e077970e540443f4c6c"
+    },
+    {number: 2,
+      url: "https://animepahe.pw/play/50687a43-d10f-a6f2-4209-02264788df7c/063b24f07dab6875b64ba04ecebf8d027f21be6350845de9e1b6a1b75a47e887"
+    }
+  ]
 },
   {
     name: "Bleach: Thousand-Year Blood War",
