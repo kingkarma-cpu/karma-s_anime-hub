@@ -1671,3 +1671,24 @@ function scrollRow(id, amount) {
     behavior: "smooth"
   });
 }
+
+const episodesBtn = document.getElementById("episodesBtn");
+const episodesOptions = document.getElementById("episodesOptions");
+
+episodesBtn.addEventListener("click", () => {
+  episodesOptions.style.display =
+    episodesOptions.style.display === "none" ? "block" : "none";
+
+  episodesOptions.innerHTML = "<p>Episodes:</p>";
+
+  anime.episodes.forEach(episode => {
+    const episodeBtn = document.createElement("a");
+
+    episodeBtn.textContent = `Episode ${episode.number}`;
+    episodeBtn.href = episode.url;
+    episodeBtn.target = "_blank";
+    episodeBtn.className = "episode-link";
+
+    episodesOptions.appendChild(episodeBtn);
+  });
+});
