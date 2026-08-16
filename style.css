@@ -217,8 +217,8 @@ nav a {
   max-width: 600px;
 }
 
-/* WATCH BUTTON */
-.watch-btn {
+/* Episodes BUTTON */
+.episodes-btn {
   margin-top: 20px;
   display: inline-block;
   padding: 12px 18px;
@@ -231,7 +231,7 @@ nav a {
   transition: 0.3s;
 }
 
-.watch-btn:hover {
+.episodes-btn:hover {
   transform: scale(1.05);
 }
 
