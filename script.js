@@ -85,7 +85,7 @@ const action = [
   episodes: [
     {
       number: 1,
-      url: "https://kissanime.com.cv/solo-leveling-episode-1/preview"
+      url: "https://kissanime.com.cv/embed/solo-leveling-episode-1"
     }
   ]
 },
