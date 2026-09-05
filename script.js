@@ -113,7 +113,7 @@ const action = [
   desc: "A genius exiled prince gains the power of absolute command and starts a rebellion against a powerful empire while hiding his identity as Zero.",
  episodes:[
     {number: 1,
-      url: "https://animepahe.pw/play/50687a43-d10f-a6f2-4209-02264788df7c/7df5c9225a05a085fcc1e14ffa4e227491b57853fd3a1e077970e540443f4c6c"
+      url: "https://animepahe.pw/play/97ce58de-1041-a698-da4c-044eaaebc426/0c149e1018bc81b8c1630f571bab5b2720e90bbf6e2a70037f125984a7a12fe3"
     },
     {number: 2,
       url: "https://animepahe.pw/play/50687a43-d10f-a6f2-4209-02264788df7c/063b24f07dab6875b64ba04ecebf8d027f21be6350845de9e1b6a1b75a47e887"
