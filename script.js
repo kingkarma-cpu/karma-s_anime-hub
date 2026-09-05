@@ -9,6 +9,12 @@ const animeData = [
     watch: "https://animepahe.pw/anime/0c874b49-74db-8561-d507-6e300e0ef4e4"
   },
   {
+    name: "Bleach: Thousand Year Blood War",
+    image: "images/bleach tybw.jfif",
+    desc: "",
+    watch: ""
+  },
+  {
     name: "One Piece",
     image: "images/onepiece.jpg",
     desc: "A young pirate, Monkey D. Luffy, sets out on a legendary journey to find the ultimate treasure—the One Piece—and become the King of the Pirates. Along the way, he builds a powerful crew and takes on dangerous enemies across the seas ",
