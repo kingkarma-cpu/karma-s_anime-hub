@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const id = params.get("id");
 
   // 2. get anime from database (must exist in script.js)
-const anime = JSON.parse(localStorage.getItem("selectedAnime"));
+const name = localStorage.getItem("selectedAnime");
+const anime = allAnime.find(a => a.name === name);
 
   if (!anime) {
     document.body.innerHTML = "<h2>❌ Anime not found</h2>";
@@ -52,7 +53,7 @@ const anime = JSON.parse(localStorage.getItem("selectedAnime"));
   // 5. create episode buttons
   anime.episodes.forEach((ep, i) => {
     const btn = document.createElement("button");
-    btn.innerText = "Episode " + ep.ep;
+    btn.innerText = "Episode " + ep.number;
 
     btn.onclick = () => loadEpisode(i);
 
