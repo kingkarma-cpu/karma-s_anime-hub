@@ -210,6 +210,25 @@ document.addEventListener("DOMContentLoaded", () => {
   <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const episodesBtn = document.getElementById("episodesBtn");
+  const episodesOptions = document.getElementById("episodesOptions");
+
+  episodesBtn.addEventListener("click", () => {
+
+    if (episodesOptions.style.display === "none") {
+      episodesOptions.style.display = "block";
+    } else {
+      episodesOptions.style.display = "none";
+    }
+
+  });
+
+});
+</script>
+
 
 
 **whatever you see on the watch page is no where linked to karma's hub or will it be blamed on karma's hub**
