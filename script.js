@@ -77,13 +77,19 @@ const action = [
     desc: "A boy bound to a devil gains chainsaw powers and enters a violent world of devil hunters, survival, and twisted desires.",
     watch: "https://animepahe.pw/anime/2ace5b79-4d59-08a8-5964-33589bbd1d45"
   },
+  
   {
-    name: "Solo Leveling",
-    image: "images/solo.jfif",
-    desc: "A weak hunter becomes humanity’s strongest after gaining a mysterious system that allows him to level up endlessly.",
-    watch: "https://animepahe.pw/anime/a57b14d1-d0bd-e092-0276-d4d20f7ea28d"
-  },
-  {
+  name: "Solo Leveling",
+  image: "images/solo.jfif",
+  desc: "A weak hunter becomes humanity’s strongest after gaining a mysterious system that allows him to level up endlessly.",
+  episodes: [
+    {
+      number: 1,
+      url: "https://kissanime.com.cv/solo-leveling-episode-1/embed"
+    }
+  ]
+},
+{
   name: "Fire Force",
   image: "images/fireforc.jfif",
   desc: "Special fire soldiers called Fire Force fight spontaneous human combustion cases while uncovering a dark truth behind the phenomenon.",
