@@ -78,7 +78,7 @@ const action = [
     episodes: [
       {
         number: 1,
-        url: "https://animepahe.pw/anime/embed/fff864cd-461a-d1c3-4979-2778eb6063d3"
+        url: "https://animepahe.pw/anime/fff864cd-461a-d1c3-4979-2778eb6063d3"
       }
     ],
     trailer: "https://youtu.be/embed/DLRjhptssns",
