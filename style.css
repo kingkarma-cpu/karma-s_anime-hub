@@ -696,3 +696,136 @@ nav a {
   }
 
 }
+
+/* =========================
+   ANDROID / MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+  /* ---------- ANIME PAGE ---------- */
+
+  .anime-page {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .anime-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .anime-img {
+    width: 220px;
+    max-width: 75%;
+    height: auto;
+  }
+
+  .anime-right {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .anime-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .anime-desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .trailer-box {
+    width: 100%;
+  }
+
+  .trailer-box iframe {
+    width: 100%;
+    height: 220px;
+    display: block;
+  }
+
+  .anime-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .anime-buttons button {
+    width: 100%;
+    min-height: 45px;
+    font-size: 15px;
+  }
+
+  .episodes-options {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .episodes-options button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+
+  /* ---------- WATCH PAGE ---------- */
+
+  .watch-page {
+    width: 100%;
+    max-width: none;
+    padding: 15px 10px;
+    box-sizing: border-box;
+  }
+
+  .watch-page h1 {
+    font-size: 26px;
+    margin: 5px 0;
+  }
+
+  .watch-page h2 {
+    font-size: 19px;
+    margin: 5px 0 15px;
+  }
+
+  .video-box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .video-box iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
+    display: block;
+    border: none;
+  }
+
+  #episodeList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  #episodeList button {
+    padding: 10px 15px;
+    font-size: 14px;
+    min-height: 40px;
+  }
+
+}
