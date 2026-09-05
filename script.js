@@ -71,6 +71,18 @@ const action = [
     desc: "A boy enters a dangerous world of curses and sorcerers.",
     watch: "https://animepahe.pw/anime/7c3c31da-3672-eacd-eadf-5354aa234ae6"
   },
+  {
+    name: "Bleach",
+    image: "",
+    desc: "Ichigo Kurosaki gains the powers of a Soul Reaper and enters a world of spirits and powerful enemies. He must protect the living while discovering the true power within him.",
+    episodes: [
+      {
+        number: 1,
+        url: "https://animepahe.pw/anime/embed/fff864cd-461a-d1c3-4979-2778eb6063d3"
+      }
+    ],
+    trailer: "https://youtu.be/embed/DLRjhptssns",
+  },
     {
     name: "Chainsaw Man",
     image: "images/csman.jfif",
@@ -667,7 +679,7 @@ const ecchi = [
 name: "Keijo",
 image: "images/keijo.jfif",
 desc: "Keijo follows Nozomi Kaminashi a talented athlete who joins a professional Keijo training school to pursue her dream of becoming a top competitor and earning money to support her family  Keijo is a unique water sport where players battle on floating platforms and try to knock their opponents into the water  As Nozomi trains and faces powerful rivals she develops new techniques builds friendships and pushes herself to become stronger",
-trailer: "https://youtu.be/embed/iL-8bxGve30?si=jbYIP-2s9sgWqjkg",
+trailer: "https://youtu.be/embed/iL-8bxGve30",
 watch: "watch.html?id=keijo",
 episodes: [
 {
