@@ -656,7 +656,8 @@ const ecchi = [
     desc: "",
     watch: ""
   },
-  {
+  
+{
 name: "Keijo",
 image: "images/keijo.jpg",
 desc: "",
@@ -669,6 +670,46 @@ url: "https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Reta
 {
 number: 2,
 url: "https://drive.google.com/file/d/1Mas3WIAkt1z_hJIxBnDf7UWjtHMyHyEq/preview"
+},
+{
+number: 3,
+url: "https://drive.google.com/file/d/1jBRhWOO_N1cCpBhg-yP2sLvl6HwvlR5I/preview"
+},
+{
+number: 4,
+url: "https://drive.google.com/file/d/1zgpPomFexzu5K63p5wzh0n-l5zblgPBO/preview"
+},
+{
+number: 5,
+url: "https://drive.google.com/file/d/1s9nnloMtA38Gv4ssYvjzJ_gqw_AB98Gx/preview"
+},
+{
+number: 6,
+url: "https://drive.google.com/file/d/1tgg0OhlQmyWiHKwzWJQiB2L2EqccsGqN/preview"
+},
+{
+number: 7,
+url: "https://drive.google.com/file/d/1BxFuYl7bGqLZgVdvzaJjI_DhRt8kyZsi/preview"
+},
+{
+number: 8,
+url: "https://drive.google.com/file/d/1q-qfFTSroqVztqzsOWwJ2KS5FVHn5Vg3/preview"
+},
+{
+number: 9,
+url: "https://drive.google.com/file/d/1cVzZrdm968Zs4AKOq2I6f4RPgzCrq9Aq/preview"
+},
+{
+number: 10,
+url: "https://drive.google.com/file/d/1MBdx-JAg0NvT-2ABjiPod2LSj6M0j71X/preview"
+},
+{
+number: 11,
+url: "https://drive.google.com/file/d/1DKkMjbyGVVUcyOEfyyLIzc-BJjiAHiDZ/preview"
+},
+{
+number: 12,
+url: "https://drive.google.com/file/d/1bv7Ug7VcrckrCUUAxjuMvIyvhkdf0h3G/preview"
 }
 ]
 },
