@@ -657,16 +657,22 @@ const ecchi = [
     watch: ""
   },
   {
-    name: "Keijo",
-    image: "images/keijo.jpg",
-    desc: "",
-    watch: "watch.html?id=keijo",
-    episodes:
-    ["https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4",
-      "https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4"
+name: "Keijo",
+image: "images/keijo.jpg",
+desc: "",
+watch: "watch.html?id=keijo",
+episodes: [
+{
+number: 1,
+url: "https://streamtape.com/v/xormjDMGM8fkOGo/AnimePahe_Keijo_-_01_BD_720p_Retail.mp4"
+},
+{
+number: 2,
+url: "https://drive.google.com/file/d/1Mas3WIAkt1z_hJIxBnDf7UWjtHMyHyEq/preview"
+}
+]
+},
 
-    ]
-  },
     {
     name: "Shimoneta",
     image: "images/shimoneta.jpg",
