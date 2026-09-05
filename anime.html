@@ -1,234 +1,270 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Anime Details</title>
-  <link rel="stylesheet" href="style.css">
 
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/favicon.png?v=999">
 </head>
 
 <body>
 
-  <!-- ✅ NAVBAR (MUST BE OUTSIDE EVERYTHING) -->
+  <!-- NAVBAR -->
+
   <nav>
     <h1 onclick="window.location.href='index.html'" style="cursor:pointer;">
       🐔 Karma's_Anime-HUB
     </h1>
 
-    <a href="favorites.html" style="color:white; margin-left:20px;">
-      My Favorites ❤️
-    </a>
+```
+<a href="favorites.html" style="color:white; margin-left:20px;">
+  My Favorites ❤️
+</a>
+```
+
   </nav>
 
-  <!-- ✅ DETAILS -->
+  <!-- ANIME DETAILS -->
+
   <div class="anime-page">
 
-  <div class="anime-left">
-    <img id="animeImage" class="anime-img">
+```
+<div class="anime-left">
+  <img id="animeImage" class="anime-img" alt="Anime">
+</div>
+
+<div class="anime-right">
+
+  <h1 id="animeTitle" class="anime-title"></h1>
+
+  <p id="animeDesc" class="anime-desc"></p>
+
+  <div id="trailerContainer" class="trailer-box"></div>
+
+  <div class="anime-buttons">
+
+    <button id="episodesBtn" class="episodes-btn">
+      ▶ Episodes
+    </button>
+
+    <button class="fav-btn">
+      ❤️ Add to Favorites
+    </button>
+
   </div>
 
-  <div class="anime-right">
-    <h1 id="animeTitle" class="anime-title"></h1>
 
-    <p id="animeDesc" class="anime-desc"></p>
+  <!-- EPISODE OPTIONS -->
+  <div
+    id="episodesOptions"
+    class="episodes-options"
+    style="display:none;"
+  ></div>
 
-    <div id="trailerContainer" class="trailer-box"></div>
-
-    <div class="anime-buttons">
-  <button id="episodesBtn" class="episodes-btn">▶ Episodes</button>
-
-  <button class="fav-btn">❤️ Add to Favorites</button>
 </div>
+```
 
-<div id="episodesOptions" class="episodes-options" style="display:none;">
-</div>
   </div>
 
-</div>
-   <script src="script.js"></script>
+  <!-- SCRIPT -->
 
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
+  <script src="script.js"></script>
 
-  const name = localStorage.getItem("selectedAnime");
-  const anime = allAnime.find(a => a.name === name);
-
-  const container = document.getElementById("animeDetails");
-
-  if (!anime) {
-    container.innerHTML = "<h2>No anime selected</h2>";
-    return;
-  }
-
+  <script>
   document.addEventListener("DOMContentLoaded", () => {
-  const name = localStorage.getItem("selectedAnime");
 
-  if (!name) return;
+    // Get selected anime
+    const name = localStorage.getItem("selectedAnime");
 
-  // combine all anime arrays (same ones from main file)
-  const allAnime = [
-    ...animeData,
-    ...action,
-    ...adventure,
-    ...sports,
-    ...romance,
-    ...ecchi,
-    ...mystery,
-    ...comedy,
-    ...fantasy,
-    ...isekai,
-    ...sliceOfLife,
-    ...schoolLife,
-    ...recent
-  ];
-
-  const anime = allAnime.find(a => a.name === name);
-
-  if (!anime) return;
-
-  // set title (optional)
-  document.getElementById("animeTitle").textContent = anime.name;
-
-  // set image (optional)
-  document.getElementById("animeImg").src = anime.image;
-
-  // LOAD VIDEO
-  const player = document.getElementById("videoPlayer");
-
-  if (anime.watch) {
-    player.src = anime.watch;
-  } else {
-    player.style.display = "none";
-    document.getElementById("noVideo").textContent = "No video available";
-  }
-});
-
-  document.title = anime.name + " | Karma's Hub";
-
-  container.innerHTML = `
-    <div class="anime-page">
-
-      <div class="anime-left">
-        <img src="${anime.image}" class="anime-img">
-      </div>
-
-      <div class="anime-right">
-        <h1 class="anime-title">${anime.name}</h1>
-
-        <p class="anime-desc">
-          ${anime.desc || "No description available."}
-        </p>
-
-        <!-- TRAILER -->
-        <div class="trailer-box">
-          ${anime.trailer ? `
-            <iframe 
-              src="${
-                anime.trailer
-                  .replace("youtu.be/", "www.youtube.com/embed/")
-                  .replace("watch?v=", "embed/")
-                  .split("&")[0]
-              }"
-              allowfullscreen>
-            </iframe>
-          ` : "<p style='color:gray;'>No trailer available</p>"}
-        </div>
-
-        <!-- WATCH BUTTON -->
-        ${anime.watch ? `
-          <a href="${anime.watch}" target="_blank" class="watch-btn">
-            ▶ Watch Now
-          </a>
-        ` : ""}
-      </div>
-
-    </div>
-  `;
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const name = localStorage.getItem("selectedAnime");
-
-  if (!name) return;
-
-  const anime = allAnime.find(a => a.name === name);
-  if (!anime) return;
-
-  document.title = anime.name + " | Karma's Hub";
-
-  document.getElementById("animeImage").src = anime.image;
-  document.getElementById("animeTitle").textContent = anime.name;
-  document.getElementById("animeDesc").textContent =
-    anime.desc || "No description available";
-
-  const watchBtn = document.getElementById("watchBtn");
-
-  if (anime.watch) {
-    watchBtn.href = anime.watch;
-    watchBtn.style.display = "inline-block";
-  } else {
-    watchBtn.style.display = "none";
-  }
-
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const favBtn = document.querySelector(".fav-btn");
-
-  favBtn.addEventListener("click", () => {
-
-    const anime = {
-      name: document.getElementById("animeTitle").innerText,
-      image: document.getElementById("animeImage").src
-    };
-
-    let favs = JSON.parse(localStorage.getItem("favs")) || [];
-
-    let exists = favs.some(a => a.name === anime.name);
-    if (exists) {
-      alert("Already in favorites ❤️");
+    if (!name) {
+      document.getElementById("animeTitle").textContent =
+        "No anime selected";
       return;
     }
 
-    favs.push(anime);
+    // Find anime from script.js
+    const anime = allAnime.find(a => a.name === name);
 
-    localStorage.setItem("favs", JSON.stringify(favs));
-
-    alert("Added to favorites ❤️");
-  });
-
-});
-</script>
-
-<div class="video-box">
-  <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const episodesBtn = document.getElementById("episodesBtn");
-  const episodesOptions = document.getElementById("episodesOptions");
-
-  episodesBtn.addEventListener("click", () => {
-
-    if (episodesOptions.style.display === "none") {
-      episodesOptions.style.display = "block";
-    } else {
-      episodesOptions.style.display = "none";
+    if (!anime) {
+      document.getElementById("animeTitle").textContent =
+        "Anime not found";
+      return;
     }
 
+
+    // -------------------------
+    // ANIME INFORMATION
+    // -------------------------
+
+    document.title = anime.name + " | Karma's Hub";
+
+    document.getElementById("animeImage").src = anime.image;
+
+    document.getElementById("animeTitle").textContent = anime.name;
+
+    document.getElementById("animeDesc").textContent =
+      anime.desc || "No description available.";
+
+
+    // -------------------------
+    // TRAILER
+    // -------------------------
+
+    const trailerContainer =
+      document.getElementById("trailerContainer");
+
+    if (anime.trailer) {
+
+      let trailerURL = anime.trailer
+        .replace("youtu.be/", "www.youtube.com/embed/")
+        .replace("watch?v=", "embed/")
+        .split("&")[0];
+
+      trailerContainer.innerHTML = `
+        <iframe
+          src="${trailerURL}"
+          width="100%"
+          height="300"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      `;
+
+    } else {
+
+      trailerContainer.innerHTML =
+        "<p style='color:gray;'>No trailer available</p>";
+
+    }
+
+
+    // -------------------------
+    // EPISODES
+    // -------------------------
+
+    const episodesBtn =
+      document.getElementById("episodesBtn");
+
+    const episodesOptions =
+      document.getElementById("episodesOptions");
+
+
+    // If anime has no episodes
+    if (!anime.episodes || anime.episodes.length === 0) {
+
+      episodesBtn.style.display = "none";
+
+    } else {
+
+      episodesBtn.addEventListener("click", () => {
+
+        // Close episode list
+        if (episodesOptions.style.display === "block") {
+
+          episodesOptions.style.display = "none";
+          return;
+
+        }
+
+
+        // Open episode list
+        episodesOptions.style.display = "block";
+
+        episodesOptions.innerHTML = "";
+
+
+        // Create episode buttons
+        anime.episodes.forEach((episode) => {
+
+          const button =
+            document.createElement("button");
+
+          button.textContent =
+            "Episode " + episode.number;
+
+
+          button.addEventListener("click", () => {
+
+            // Save selected episode
+            localStorage.setItem(
+              "selectedEpisode",
+              JSON.stringify(episode)
+            );
+
+
+            // Go to watch page
+            window.location.href =
+              "watch.html?id=" +
+              encodeURIComponent(anime.name);
+
+          });
+
+
+          episodesOptions.appendChild(button);
+
+        });
+
+      });
+
+    }
+
+
+    // -------------------------
+    // FAVORITES
+    // -------------------------
+
+    const favBtn =
+      document.querySelector(".fav-btn");
+
+    favBtn.addEventListener("click", () => {
+
+      const favoriteAnime = {
+
+        name:
+          document.getElementById("animeTitle").innerText,
+
+        image:
+          document.getElementById("animeImage").src
+
+      };
+
+
+      let favorites =
+        JSON.parse(
+          localStorage.getItem("favs")
+        ) || [];
+
+
+      const alreadyExists =
+        favorites.some(
+          a => a.name === favoriteAnime.name
+        );
+
+
+      if (alreadyExists) {
+
+        alert("Already in favorites ❤️");
+        return;
+
+      }
+
+
+      favorites.push(favoriteAnime);
+
+
+      localStorage.setItem(
+        "favs",
+        JSON.stringify(favorites)
+      );
+
+
+      alert("Added to favorites ❤️");
+
+    });
+
   });
+  </script>
 
-});
-</script>
-
-
-
-**whatever you see on the watch page is no where linked to karma's hub or will it be blamed on karma's hub**
+</body>
+</html>
