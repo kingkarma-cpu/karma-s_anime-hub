@@ -1,67 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Watch Anime</title>
+  <title>Watch Anime | Karma's Hub</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png?v=999">
 </head>
 
 <body>
 
 <nav>
   <h1 onclick="window.location.href='index.html'" style="cursor:pointer;">
-    🐔 Karma's Anime Hub
+    Tempest HUB
   </h1>
 </nav>
 
-<h2 id="animeTitle"></h2>
+<main class="watch-page">
 
-<!-- VIDEO PLAYER -->
-<video id="videoPlayer" controls width="100%" height="400"></video>
+  <h1 id="animeTitle">Loading...</h1>
 
-<!-- EPISODES -->
-<div id="episodeList" style="margin-top:20px;"></div>
+  <h2 id="episodeTitle"></h2>
+
+  <div class="video-box">
+    <iframe
+      id="videoPlayer"
+      width="100%"
+      height="500"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div id="episodeList"></div>
+
+  <p>
+    Video content is provided by the external video source.
+  </p>
+
+</main>
 
 <script src="script.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 1. get anime id from URL
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
+  const name = localStorage.getItem("selectedAnime");
 
-  // 2. get anime from database (must exist in script.js)
-const name = localStorage.getItem("selectedAnime");
-const anime = allAnime.find(a => a.name === name);
+  const selectedEpisode =
+    JSON.parse(localStorage.getItem("selectedEpisode"));
+
+  const anime = allAnime.find(a => a.name === name);
 
   if (!anime) {
-    document.body.innerHTML = "<h2>❌ Anime not found</h2>";
+    document.getElementById("animeTitle").textContent =
+      "Anime not found";
     return;
   }
 
-  // 3. set title
-  document.getElementById("animeTitle").innerText = anime.name;
+  document.getElementById("animeTitle").textContent =
+    anime.name;
 
-  const player = document.getElementById("videoPlayer");
-  const list = document.getElementById("episodeList");
+  const player =
+    document.getElementById("videoPlayer");
 
-  // 4. load episode function
-  function loadEpisode(index) {
-    player.src = anime.episodes[index].url;
+  const episodeTitle =
+    document.getElementById("episodeTitle");
+
+  const episodeList =
+    document.getElementById("episodeList");
+
+
+  // Load selected episode
+  function loadEpisode(episode) {
+
+    if (!episode) return;
+
+    episodeTitle.textContent =
+      "Episode " + episode.number;
+
+    player.src = episode.url;
+
+    localStorage.setItem(
+      "selectedEpisode",
+      JSON.stringify(episode)
+    );
   }
 
-  // 5. create episode buttons
-  anime.episodes.forEach((ep, i) => {
-    const btn = document.createElement("button");
-    btn.innerText = "Episode " + ep.number;
 
-    btn.onclick = () => loadEpisode(i);
+  // Create episode buttons
+  if (anime.episodes) {
 
-    list.appendChild(btn);
-  });
+    anime.episodes.forEach((episode) => {
 
-  // 6. auto play first episode
-  loadEpisode(0);
+      const button =
+        document.createElement("button");
+
+      button.textContent =
+        "Episode " + episode.number;
+
+      button.onclick = () => {
+        loadEpisode(episode);
+      };
+
+      episodeList.appendChild(button);
+
+    });
+
+  }
+
+
+  // Load the episode selected from anime.html
+  if (selectedEpisode) {
+
+    const episode =
+      anime.episodes.find(
+        ep => ep.number === selectedEpisode.number
+      );
+
+    if (episode) {
+      loadEpisode(episode);
+    }
+
+  } else if (anime.episodes && anime.episodes.length > 0) {
+
+    loadEpisode(anime.episodes[0]);
+
+  }
 
 });
 </script>
