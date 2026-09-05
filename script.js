@@ -116,7 +116,7 @@ const action = [
       url: "https://www.youtube.com/embed/vtQp7Xpz1l0"
     },
     {number: 2,
-      url: "https://animekai.be/embed/code-geass-lelouch-of-the-rebellion-r2/ep-1"
+      url: "https://cinevo.nl/watch/tv/code-geass-lelouch-of-the-rebellion-31724"
     }
   ]
 },
