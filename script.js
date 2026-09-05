@@ -659,8 +659,9 @@ const ecchi = [
   
 {
 name: "Keijo",
-image: "images/keijo.jpg",
-desc: "",
+image: "images/keijo.jfif",
+desc: "Keijo follows Nozomi Kaminashi a talented athlete who joins a professional Keijo training school to pursue her dream of becoming a top competitor and earning money to support her family  Keijo is a unique water sport where players battle on floating platforms and try to knock their opponents into the water  As Nozomi trains and faces powerful rivals she develops new techniques builds friendships and pushes herself to become stronger",
+trailer: "https://youtu.be/embed/iL-8bxGve30?si=jbYIP-2s9sgWqjkg",
 watch: "watch.html?id=keijo",
 episodes: [
 {
