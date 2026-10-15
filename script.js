@@ -43,10 +43,13 @@ const animeData = [
     name: "Black Clover",
     image: "images/blackclover.jfif",
     desc: "Black clover is a story about a boy born without magical pwers in a world where everything is made of magic, Asta has to overcomwe adversity in order to achieve his dream of becoming wizard king",
-    watch: {
-   freeLink: "",
-   subscriptionLink: ""
-    }
+    episodes: [
+      {
+        number: 171,
+        url: "https://drive.google.com/file/d/12tC58iqfuiYliBiR02cNZgvyIQwfwtq1/preview"
+      }
+    ]
+  
   },
   
   
@@ -156,15 +159,7 @@ const action = [
     desc: "Goku and friends face gods, universes, and powerful enemies beyond imagination.",
     watch: "https://animepahe.pw/anime/33684e91-3675-5dbf-d479-828df0ba4085"
   },
-  {
-    name: "Black Clover",
-    image: "images/blackclover.jfif",
-    desc: "A magicless boy aims to become the Wizard King through hard work and rival battles.",
-    watch: {
-   freeLink: "",
-   subscriptionLink: ""
-    }
-  },
+ 
   {
     name: "Akudama Drive",
     image: "images/akdrive.jfif",
@@ -280,15 +275,7 @@ const adventure = [
     image: "images/rofkings.jfif",
     desc: "A deaf and weak prince overcomes betrayal and challenges to prove his worth as a king."
   },
-  {
-    name: "Black Clover",
-    image: "images/blackclover.jpg",
-    desc: "A boy without magic aims to become the Wizard King through determination and rivalry.",
-    watch: {
-   freeLink: "",
-   subscriptionLink: ""
-    }
-  },
+ 
   {
     name: "Fairy Tail",
     image: "images/ftail.jfif",
@@ -345,15 +332,7 @@ const recent = [
   image: "images/steelballrun.jpg",
   desc: "Johnny Joestar joins a cross-country horse race across America, competing against dangerous opponents while uncovering a mysterious power tied to the Spin and ancient relics."
   },
- {
-  name: "Black Clover",
-  image: "images/blackclover.jfif",
-  desc: "Asta continues his journey to become the Wizard King, pushing beyond his limits as new threats emerge that challenge the entire Clover Kingdom.",
-  watch: {
-   freeLink: "",
-   subscriptionLink: ""
-    }
- },
+
 {
   name: "Dandadan",
   image: "images/dandadan.jfif",
@@ -1106,16 +1085,7 @@ const fantasy = [
     desc: "A boy explores magical dungeons filled with treasure, danger, and destiny.",
     hidden: true
   },
-  {
-    name: "Black Clover",
-    image: "images/blackclover.jpg",
-    desc: "A boy born without magic trains to become the Wizard King.",
-    watch: {
-   freeLink: "",
-   subscriptionLink: ""
-    },
-    hidden: true
-  },
+ 
   {
     name: "The Ancient Magus’ Bride",
     image: "images/magusbride.jpg",
