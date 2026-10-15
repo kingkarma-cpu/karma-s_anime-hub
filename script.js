@@ -159,7 +159,18 @@ const action = [
     desc: "Goku and friends face gods, universes, and powerful enemies beyond imagination.",
     watch: "https://animepahe.pw/anime/33684e91-3675-5dbf-d479-828df0ba4085"
   },
- 
+  {
+    name: "Black Clover",
+    image: "images/blackclover.jfif",
+    desc: "Black clover is a story about a boy born without magical pwers in a world where everything is made of magic, Asta has to overcomwe adversity in order to achieve his dream of becoming wizard king",
+    episodes: [
+      {
+        number: 171,
+        url: "https://drive.google.com/file/d/12tC58iqfuiYliBiR02cNZgvyIQwfwtq1/preview"
+      }
+    ]
+  
+  },
   {
     name: "Akudama Drive",
     image: "images/akdrive.jfif",
