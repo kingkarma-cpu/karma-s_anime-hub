@@ -1,0 +1,17 @@
+
+name: School Project - Website Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check homepage
+        run: |
+          curl -fsS --max-time 20 \
+            https://karmasanimehub.vercel.app/ \
+            -o /dev/null
+          echo "Homepage check passed!"
