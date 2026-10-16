@@ -15,3 +15,10 @@ jobs:
             https://karmasanimehub.vercel.app/ \
             -o /dev/null
           echo "Homepage check passed!"
+
+      - name: Check anime page
+        run: |
+          curl -fsS --max-time 20 \
+            https://karmasanimehub.vercel.app/anime.html \
+            -o /dev/null
+          echo "Anime page check passed!"
