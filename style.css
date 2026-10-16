@@ -847,44 +847,121 @@ min-height: 190px;
 }
 
 
-/* =====================================
-   KARMA'S ANIME HUB - MOBILE UI FIX
-   Anime Details + Watch Page
-===================================== */
+/* =================================
+   MOBILE FIX: ANIME + WATCH PAGES
+   Does not target homepage cards
+================================= */
+
 @media screen and (max-width: 600px) {
 
-  /* Prevent horizontal overflow */
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Main anime details layout */
-  .anime-details,
-  .anime-container,
-  .anime-info-container {
+  /* ANIME DETAILS PAGE */
+  .anime-page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 18px 16px;
   }
 
-  /* Poster */
-  .anime-poster img,
-  .anime-details img {
+  .anime-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: none;
+  }
+
+  .anime-img {
+    display: block;
+    width: 220px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
   }
 
-  /* Description */
-  .anime-description,
-  .anime-info {
-    max-width: 100%;
-    overflow-wrap: break-word;
+  .anime-right {
+    width: 100%;
+    min-width: 0;
+    flex: none;
   }
 
-  /* Video preview */
-  iframe,
-  video {
+  .anime-title {
+    width: fit-content;
     max-width: 100%;
+    font-size: 25px;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .anime-desc {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .trailer-box {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  .trailer-box iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 0;
+  }
+
+  .anime-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  /* WATCH PAGE */
+  .watch-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .watch-page .video-box {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .watch-page .video-box iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 0;
+    border: 0;
+  }
+
+  .watch-page #episodeList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .watch-page #episodeList button {
+    max-width: 100%;
+    min-height: 40px;
   }
 }
