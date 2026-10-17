@@ -26,12 +26,15 @@
 
   <h2 id="episodeTitle"></h2>
 
+  <div class="player-actions">
+    <button id="fullscreenBtn" type="button">Fullscreen</button>
+  </div>
+
   <div class="video-box">
     <iframe
       id="videoPlayer"
       title="Anime episode player"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
+      allow="autoplay; picture-in-picture"
       sandbox="allow-scripts allow-same-origin allow-presentation">
     </iframe>
   </div>
@@ -67,8 +70,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const episodeTitle =
     document.getElementById("episodeTitle");
 
+  const fullscreenButton =
+    document.getElementById("fullscreenBtn");
+
+  const videoBox =
+    document.querySelector(".video-box");
+
   const episodeList =
     document.getElementById("episodeList");
+
+  const requestFullscreen =
+    videoBox.requestFullscreen?.bind(videoBox) ||
+    videoBox.webkitRequestFullscreen?.bind(videoBox);
+
+  if (requestFullscreen) {
+    fullscreenButton.addEventListener("click", async () => {
+      try {
+        const isFullscreen =
+          document.fullscreenElement === videoBox ||
+          document.webkitFullscreenElement === videoBox;
+
+        if (isFullscreen) {
+          const exitFullscreen =
+            document.exitFullscreen?.bind(document) ||
+            document.webkitExitFullscreen?.bind(document);
+
+          await exitFullscreen?.();
+        } else {
+          await requestFullscreen();
+        }
+      } catch (error) {
+        console.error("Fullscreen request failed:", error);
+      }
+    });
+
+    const updateFullscreenLabel = () => {
+      const isFullscreen =
+        document.fullscreenElement === videoBox ||
+        document.webkitFullscreenElement === videoBox;
+
+      fullscreenButton.textContent =
+        isFullscreen ? "Exit fullscreen" : "Fullscreen";
+    };
+
+    document.addEventListener("fullscreenchange", updateFullscreenLabel);
+    document.addEventListener("webkitfullscreenchange", updateFullscreenLabel);
+  } else {
+    fullscreenButton.hidden = true;
+  }
 
 
   // Load selected episode
